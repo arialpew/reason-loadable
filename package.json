@@ -1,0 +1,45 @@
+{
+  "name": "parcel-reasonml-code-split",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "parcel index.html --no-cache",
+    "build": "parcel build index.html --public-url /",
+    "clean": "bsb -clean-world",
+    "test": "jest",
+    "testw": "jest --watchAll",
+    "up": "npm-update-all"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "babel-preset-react-app": "^3.1.0",
+    "bs-jest": "^0.2.0",
+    "bs-platform": "^2.1.0",
+    "bs-react-test-renderer": "^2.0.0",
+    "bsb-js": "^1.0.1",
+    "cross-env": "^5.1.3",
+    "jest": "^22.0.4",
+    "npm-update-all": "^1.0.1",
+    "parcel-bundler": "^1.3.1"
+  },
+  "dependencies": {
+    "history": "^4.7.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "reason-react": "^0.3.0",
+    "universal-router": "^5.0.0"
+  },
+  "postcss": {
+    "modules": false,
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          ">1%",
+          "last 4 versions",
+          "Firefox ESR",
+          "not ie < 9"
+        ],
+        "flexbox": "no-2009"
+      }
+    }
+  }
+}
