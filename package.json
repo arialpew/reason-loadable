@@ -10,16 +10,16 @@
     "up": "npm-update-all"
   },
   "devDependencies": {
-    "autoprefixer": "^7.2.3",
+    "autoprefixer": "^7.2.4",
     "babel-preset-react-app": "^3.1.0",
-    "bs-jest": "^0.2.0",
+    "bs-jest": "^0.3.2",
     "bs-platform": "^2.1.0",
     "bs-react-test-renderer": "^2.0.0",
     "bsb-js": "^1.0.1",
     "cross-env": "^5.1.3",
     "jest": "^22.0.4",
     "npm-update-all": "^1.0.1",
-    "parcel-bundler": "^1.3.1"
+    "parcel-bundler": "^1.4.1"
   },
   "dependencies": {
     "history": "^4.7.2",
