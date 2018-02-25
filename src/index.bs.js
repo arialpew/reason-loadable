@@ -1,6 +1,6 @@
 'use strict';
 
-var CreateBrowserHistory          = require("history/createBrowserHistory");
+var CreateBrowserHistory = require("history/createBrowserHistory");
 var Shell$ParcelReasonmlCodeSplit = require("./Renderer/Shell.bs.js");
 
 require("./index.css");

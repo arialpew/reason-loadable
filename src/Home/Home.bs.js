@@ -1,7 +1,7 @@
 'use strict';
 
-var Curry       = require("bs-platform/lib/js/curry.js");
-var React       = require("react");
+var Curry = require("bs-platform/lib/js/curry.js");
+var React = require("react");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 
 var component = ReasonReact.statelessComponent("Home");
@@ -19,5 +19,5 @@ function make(redirect, _) {
 }
 
 exports.component = component;
-exports.make      = make;
+exports.make = make;
 /* component Not a pure module */

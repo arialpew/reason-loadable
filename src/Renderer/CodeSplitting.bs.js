@@ -19,7 +19,7 @@ var ImportableFaqModule = /* module */[/* doImport */doImport$1];
 var ImportableFaq = Import$ParcelReasonmlCodeSplit.Create(ImportableFaqModule);
 
 exports.ImportableHomeModule = ImportableHomeModule;
-exports.ImportableHome       = ImportableHome;
-exports.ImportableFaqModule  = ImportableFaqModule;
-exports.ImportableFaq        = ImportableFaq;
+exports.ImportableHome = ImportableHome;
+exports.ImportableFaqModule = ImportableFaqModule;
+exports.ImportableFaq = ImportableFaq;
 /* ImportableHome Not a pure module */

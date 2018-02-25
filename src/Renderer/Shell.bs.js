@@ -1,9 +1,9 @@
 'use strict';
 
-var Curry                                 = require("bs-platform/lib/js/curry.js");
-var ReactDOMRe                            = require("reason-react/src/ReactDOMRe.js");
-var ReasonReact                           = require("reason-react/src/ReasonReact.js");
-var Main                                  = require("universal-router/main");
+var Curry = require("bs-platform/lib/js/curry.js");
+var ReactDOMRe = require("reason-react/src/ReactDOMRe.js");
+var ReasonReact = require("reason-react/src/ReasonReact.js");
+var Main = require("universal-router/main");
 var CodeSplitting$ParcelReasonmlCodeSplit = require("./CodeSplitting.bs.js");
 
 function handlers(redirect) {
@@ -54,7 +54,7 @@ function bootstrap(story) {
   return router;
 }
 
-exports.handlers  = handlers;
-exports.render    = render;
+exports.handlers = handlers;
+exports.render = render;
 exports.bootstrap = bootstrap;
 /* ReactDOMRe Not a pure module */
