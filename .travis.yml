@@ -1,0 +1,15 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - 9
+
+install:
+  - npm install
+  - npm run clean  
+
+script:
+  - npm run make
+  - npm run build:parcel
+  - npm run build:webpack
