@@ -1,5 +1,5 @@
 {
-  "name": "parcel-reasonml-code-split",
+  "name": "reasonml-code-split",
   "bsc-flags": ["-bs-no-version-header", "-bs-super-errors"],
   "reason": { "react-jsx": 2 },
   "bs-dependencies": ["reason-react"],

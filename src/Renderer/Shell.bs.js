@@ -3,7 +3,7 @@
 var Curry = require("bs-platform/lib/js/curry.js");
 var ReactDOMRe = require("reason-react/src/ReactDOMRe.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
-var Main = require("universal-router/main");
+var Index = require("universal-router/index");
 var CodeSplitting$ParcelReasonmlCodeSplit = require("./CodeSplitting.bs.js");
 
 function handlers(redirect) {
@@ -47,7 +47,7 @@ function bootstrap(story) {
     $$event.preventDefault();
     return story.push(target);
   };
-  var router = new Main(handlers(dispatcher));
+  var router = new Index(handlers(dispatcher));
   story.listen((function ($$location) {
           return render($$location, router);
         }));
