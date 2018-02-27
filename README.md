@@ -1,5 +1,7 @@
 # reasonml-code-split 
 
+[![Build Status](https://travis-ci.org/kMeillet/reasonml-code-split.svg?branch=master)](https://travis-ci.org/kMeillet/reasonml-code-split)
+
 - With Parcel.
 - With Webpack 4.
 
