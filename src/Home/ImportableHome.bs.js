@@ -1,11 +1,11 @@
 'use strict';
 
-var Home$ParcelReasonmlCodeSplit = require("./Home.bs.js");
+var Home$ReasonmlCodeSplit = require("./Home.bs.js");
 
-var importable = /* Home-ParcelReasonmlCodeSplit */[
-  Home$ParcelReasonmlCodeSplit.component,
-  Home$ParcelReasonmlCodeSplit.make
+var importable = /* Home-ReasonmlCodeSplit */[
+  Home$ReasonmlCodeSplit.component,
+  Home$ReasonmlCodeSplit.make
 ];
 
 exports.importable = importable;
-/* Home-ParcelReasonmlCodeSplit Not a pure module */
+/* Home-ReasonmlCodeSplit Not a pure module */
