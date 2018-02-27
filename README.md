@@ -30,6 +30,12 @@ Then, the application is re-render.
 
 Thanks to @rickyvetter and ReasonML community.
 
+# Limit
+
+- Parcel watch server doesn't trigger change on code-splitted ReasonML module (they will remove Chokidar soon, so maybe it will fix it).
+
+- Code should look better for scaling.
+
 # Bundle size (minified, no gzip compression)
 
 ### Parcel : 188kb (main) - 2kb (css) - 1kb (html) - 2kb (bundle 1) - 2kb (bundle 2)
