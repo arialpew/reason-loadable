@@ -24,9 +24,9 @@
 
 # Bundle size (minified, no gzip compression)
 
-### Parcel : 188kb (main) - 2kb (css) - 1kb (html) - 2kb (bundle 1) - 2kb (bundle 2)
+### Parcel : 173kb (main) - 2kb (css) - 1kb (html) - 2kb (bundle 1) - 2kb (bundle 2)
 
-### WebPack : 181kb (main) - 1kb (html) - 1kb (bundle 1) - 1kb (bundle 2)
+### WebPack : 166kb (main) - 1kb (html) - 1kb (bundle 1) - 1kb (bundle 2)
 
 discord.gg/reasonml
 
