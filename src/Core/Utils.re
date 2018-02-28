@@ -7,12 +7,32 @@
 /* Require a module at runtime (code-splitting import). */
 [@bs.val] external import: string => Js.Promise.t('a) = "";
 
-let compose = (f, g, x) => f(g(x));
+module Fn = {
+  let flip = (f, a, b) => f(b, a);
 
-let pipe = (f, g, x) => g(f(x));
+  let vtap = (f, x) => {
+    f(x);
+    ();
+  };
+
+  let tap = (f, x) => {
+    f(x);
+    x;
+  };
+
+  let compose = (f, g, x) => f(g(x));
+
+  let pipe = (f, g, x) => g(f(x));
+};
 
 module Infix = {
-  let (<||) = compose;
+  let (<||) = Fn.compose;
 
-  let (||>) = pipe;
+  let (||>) = Fn.pipe;
+
+  let (>>=) = (x, f) =>
+    switch x {
+      | None => None
+      | Some(x) => f(x)
+    };
 };

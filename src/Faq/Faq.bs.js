@@ -1,19 +1,27 @@
 'use strict';
 
-var Curry = require("bs-platform/lib/js/curry.js");
 var React = require("react");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
+var Shell$ReasonmlCodeSplit = require("../Core/Shell.bs.js");
 
 var component = ReasonReact.statelessComponent("Faq");
 
-function make(redirect, _) {
+function make() {
   var newrecord = component.slice();
   newrecord[/* render */9] = (function () {
       return React.createElement("div", undefined, React.createElement("a", {
-                      onClick: Curry._1(redirect, "/")
+                      onClick: (function (param) {
+                          return Shell$ReasonmlCodeSplit.redirect("/", param);
+                        })
                     }, "Home"), React.createElement("a", {
-                      onClick: Curry._1(redirect, "/faq")
-                    }, "FAQ"), React.createElement("h1", undefined, "FAQ"));
+                      onClick: (function (param) {
+                          return Shell$ReasonmlCodeSplit.redirect("/faq", param);
+                        })
+                    }, "FAQ"), React.createElement("a", {
+                      onClick: (function (param) {
+                          return Shell$ReasonmlCodeSplit.redirect("/test/deep", param);
+                        })
+                    }, "Deep link"), React.createElement("h1", undefined, "FAQ"));
     });
   return newrecord;
 }

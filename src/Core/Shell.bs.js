@@ -1,46 +1,46 @@
 'use strict';
 
-var Curry = require("bs-platform/lib/js/curry.js");
+var List = require("bs-platform/lib/js/list.js");
 var ReactDOMRe = require("reason-react/src/ReactDOMRe.js");
-var Index = require("universal-router/index");
+var ReasonReact = require("reason-react/src/ReasonReact.js");
 var Utils$ReasonmlCodeSplit = require("./Utils.bs.js");
-var CreateBrowserHistory = require("history/createBrowserHistory");
+
+function parseUrl(url) {
+  return List.fold_left((function (prev, next) {
+                return prev + ("/" + next);
+              }), "", url[/* path */0]);
+}
+
+function redirect(path, $$event) {
+  $$event.preventDefault();
+  return ReasonReact.Router[/* push */0](path);
+}
 
 function MakeBrowserApplication(App) {
   var bootstrap = function (node) {
-    var history = CreateBrowserHistory.default();
-    var redirect = function (pathname, $$event) {
-      $$event.preventDefault();
-      console.log("Redirect to ---> " + pathname);
-      history.push(pathname);
-      return /* () */0;
-    };
-    var partial_arg = new Index(Curry._1(App[/* make */0], /* record */[
-              /* redirect */redirect,
-              /* history */history
-            ]));
-    var partial_arg$1 = function (param) {
-      var router = partial_arg;
-      var pathname = param;
-      console.log("Rendering route ---> " + pathname);
-      router.resolve({
-              pathname: pathname
-            }).then((function (html) {
-              ReactDOMRe.renderToElementWithId(html, node);
-              return Promise.resolve(/* () */0);
-            }));
-      return history;
-    };
-    var partial_arg$2 = Utils$ReasonmlCodeSplit.Infix[/* <|| */0];
     var render = function (param) {
-      return partial_arg$2(partial_arg$1, (function (prim) {
-                    return prim.pathname;
-                  }), param);
+      return param.then((function (html) {
+                    ReactDOMRe.renderToElementWithId(html, node);
+                    return Promise.resolve(/* () */0);
+                  }));
     };
-    return Curry._1(render, history.location).listen(render);
+    var partial_arg = App[/* make */0];
+    var partial_arg$1 = Utils$ReasonmlCodeSplit.Infix[/* ||> */1];
+    var partial_arg$2 = function (param) {
+      return partial_arg$1(partial_arg, render, param);
+    };
+    var partial_arg$3 = Utils$ReasonmlCodeSplit.Fn[/* vtap */1];
+    var handler = function (param) {
+      return partial_arg$3(partial_arg$2, param);
+    };
+    var watcher = ReasonReact.Router[/* watchUrl */1](handler);
+    ReasonReact.Router[/* push */0](parseUrl(ReasonReact.Router[/* dangerouslyGetInitialUrl */3](/* () */0)));
+    return watcher;
   };
   return /* module */[/* bootstrap */bootstrap];
 }
 
+exports.parseUrl = parseUrl;
+exports.redirect = redirect;
 exports.MakeBrowserApplication = MakeBrowserApplication;
 /* ReactDOMRe Not a pure module */

@@ -1,27 +1,22 @@
 Utils.requireCSS("./index.css");
 
 module App = Shell.MakeBrowserApplication({
-  type context = {
-    redirect: (History.path, ReactEventRe.Mouse.t) => unit,
-    history: History.t,
-  };
+  let home = () =>
+    LazyHome.Importable.import()
+      |> Js.Promise.then_(((module Home: ImportableHome.HomeIntf)) => Js.Promise.resolve(<Home />));
 
-  let make = ({ redirect }) => [|
-    {
-      "path": "/faq",
-      "action": () => {
-        LazyFaq.Importable.import()
-          |> Js.Promise.then_(((module Faq: ImportableFaq.FaqIntf)) => Js.Promise.resolve(<Faq redirect />));
-      }
-    },
-    {
-      "path": "(.*)",
-      "action": () => {
-        LazyHome.Importable.import()
-          |> Js.Promise.then_(((module Home: ImportableHome.HomeIntf)) => Js.Promise.resolve(<Home redirect />));
-      }
+  let faq = () =>
+    LazyFaq.Importable.import()
+      |> Js.Promise.then_(((module Faq: ImportableFaq.FaqIntf)) => Js.Promise.resolve(<Faq />));
+
+  let make = (url: ReasonReact.Router.url) => {
+    switch (url.path) {
+        | ["test", "deep"]
+        | ["faq"]         => faq()
+        | []
+        | _               => home()
     }
-  |];
+  };
 });
 
 let _ = App.bootstrap("root");

@@ -1,55 +1,37 @@
+open Utils.Fn;
 open Utils.Infix;
 
-module type Application = {
-  type context = {
-    redirect: (History.path, ReactEventRe.Mouse.t) => unit,
-    history: History.t,
-  };
+let parseUrl = (url: ReasonReact.Router.url) => List.fold_left((prev, next) => prev ++ "/" ++ next, "", url.path);
 
-  let make: context => UniversalRouter.handlers;
+let redirect = (path, event) => {
+  ReactEventRe.Mouse.preventDefault(event);
+  ReasonReact.Router.push(path);
 };
 
-module MakeBrowserApplication = (App: Application) => {
+module type Configuration = {
+  let make: ReasonReact.Router.url => Js.Promise.t(ReasonReact.reactElement);
+};
+
+module type BrowserApplication = (App: Configuration) => {
+  let bootstrap: string => ReasonReact.Router.watcherID;
+};
+
+module MakeBrowserApplication: BrowserApplication = (App: Configuration) => {
   let bootstrap = node => {
-    /* Create browser history context. */
-    let history = History.createBrowserHistory();
+    let render = Js.Promise.then_(html => {
+      ReactDOMRe.renderToElementWithId(html, node);
+      Js.Promise.resolve();
+    });
 
-    /* Redirect context. */
-    let redirect = (pathname, event) => {
-      ReactEventRe.Mouse.preventDefault(event);
+    let handler = vtap(App.make ||> render);
+    let watcher = ReasonReact.Router.watchUrl(handler);
 
-      Js.log("Redirect to ---> " ++ pathname);
-      History.push(pathname, history) |> ignore;
-    };
+    ReasonReact.Router.(
+      dangerouslyGetInitialUrl()
+        |> parseUrl
+        |> push
+    );
 
-    /* Resolver, need a router and route path name then resolve route and render compiled JSX. */
-    let resolver = (router, pathname) => {
-      Js.log("Rendering route ---> " ++ pathname);
-
-      router
-        |> UniversalRouter.resolve({ "pathname": pathname })
-        |> Js.Promise.then_(html => {
-          ReactDOMRe.renderToElementWithId(html, node);
-          Js.Promise.resolve();
-        }) |> ignore;
-
-      history;
-    };
-
-    /* Render function :
-        - Take history location path object.
-        - Get route path name.
-        - Resolve, render route with application context and return history.
-    */
-    let render = App.make({ redirect, history }) 
-                  |> UniversalRouter.makeRouter
-                  |> resolver <|| History.getPath;
-
-    /* First render. */
-    /* Subscribe to route change and return subscription. */
-    history
-      |> History.getLocation
-      |> render
-      |> History.listen(render);
+    watcher;
   };
 };
