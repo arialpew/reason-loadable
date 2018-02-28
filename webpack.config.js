@@ -6,9 +6,15 @@ module.exports = {
   output: {
     path: __dirname + "/dist-webpack",
     filename: "./bundle.js",
+    publicPath: "/",
   },
   resolve: {
     extensions: [".js", ".json", ".bs.js", ".css"],
+  },
+  devServer: {
+    historyApiFallback: true,
+    open: true,
+    publicPath: "/",
   },
   module: {
     rules: [
