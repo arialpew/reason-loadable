@@ -53,11 +53,11 @@ module.exports = {
     new HTMLWebpackPlugin({
       title: "Webpack ReasonML",
       template: "index-webpack.html",
-      minify: {
+      minify: isProd() ? {
         collapseWhitespace: true,
         removeComments: true,
         removeRedundantAttributes: true,
-      },
+      } : false,
     }),
     new ExtractTextWebpackPlugin({
       filename: isDev() ? "[name].css" : "[name].[hash].css",
