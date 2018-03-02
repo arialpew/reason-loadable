@@ -39,8 +39,8 @@ I'm working on a big rework so wait a bit.
 - Main bundle : xKb (main).
 - Main CSS bundle : xKb.
 - HTML : xKb.
-- Bundle #1 : xKb.
-- Bundle #2 : xKb.
+- Bundle #1 (Home) : xKb.
+- Bundle #2 (Faq) : xKb.
 - Manifest : xKb.
 
 # Future
