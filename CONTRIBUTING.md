@@ -54,6 +54,12 @@ Clean BuckleScript artifact (.bs.js files and lib/) :
 npm run clean
 ```
 
+Generate interface from header file (Cmi) :
+
+```sh
+npm run interface lib/bs/src/Module.cmi
+```
+
 Update all dependencies :
 
 ```sh
