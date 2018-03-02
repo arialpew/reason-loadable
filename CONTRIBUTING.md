@@ -17,7 +17,6 @@ npm run build:parcel
 Parcel dev :
 
 ```sh
-npm run makew
 npm run dev:parcel
 ```
 
