@@ -2,32 +2,49 @@
 
 [![Build Status](https://travis-ci.org/kMeillet/reasonml-code-split.svg?branch=master)](https://travis-ci.org/kMeillet/reasonml-code-split)
 
-- With Parcel.
-- With Webpack 4.
+- With Parcel (output in ./dist).
+- With Webpack 4 (output in ./dist-webpack).
+
+Thanks to @rickyvetter and ReasonML community (discord.gg/reasonml).
 
 # Workflow
 
-- Reason code (.re) is compiled to JavaScript (ES5 target) via Bucklescript (.bs.js).
-- ReasonReact handle React Component & Routing.
-- Parcel or Webpack compile JavaScript file (.bs.js) and all other module (CSS, Image, ...) into final bundle (.js).
+I'm working on a big rework so wait a bit.
 
 # Dependencies
 
-- React & ReactDOM & ReasonReact.
+- React & ReactDOM & ReasonReact & ReasonReactContext.
+- QueryString.
 - BuckleScript core API for basic operation (List, String, ...).
 
-# Limit
+# Know issues
 
-- Parcel watch server doesn't trigger change on code-splitted ReasonML module (they will remove Chokidar soon, so maybe it will fix it).
+- Parcel watch server doesn't trigger change with ReasonML.
 
-- Code should look better for scaling.
+- Inline manifest with Webpack 4 doesn't work for the moment.
 
 # Bundle size (minified, no gzip compression)
 
-### Parcel : 173kb (main) - 2kb (css) - 1kb (html) - 2kb (bundle 1) - 2kb (bundle 2)
+### Parcel
 
-### WebPack : 166kb (main) - 1kb (html) - 1kb (bundle 1) - 1kb (bundle 2)
+- Main bundle : xKb (main).
+- Main CSS bundle : xKb.
+- HTML : xKb.
+- Bundle #1 (Home) : xKb.
+- Bundle #2 (FAQ) : xKb.
+- Manifest : inline.
 
-discord.gg/reasonml
+### Webpack
 
-Thanks to @rickyvetter and ReasonML community.
+- Main bundle : xKb (main).
+- Main CSS bundle : xKb.
+- HTML : xKb.
+- Bundle #1 : xKb.
+- Bundle #2 : xKb.
+- Manifest : xKb.
+
+# Future
+
+- PWA (service worker, manifest, Lighthouse test, ...) ?
+- Elegant typed CSS solution ?
+- Prepack ?
