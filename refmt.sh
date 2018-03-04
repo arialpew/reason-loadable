@@ -1,5 +1,5 @@
 #!/bin/bash
-for i in $(ls src/**/*.re*)
+for i in $(find src/ -type f -name "*.re")
 do
   refmt --in-place $i
 done
