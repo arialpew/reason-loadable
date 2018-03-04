@@ -8,4 +8,6 @@ a {
   cursor: hand;
   border: 1px solid red;
   padding: 20px;
+  margin: 0 auto;
+  text-align: center;
 }

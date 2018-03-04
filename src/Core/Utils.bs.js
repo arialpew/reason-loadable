@@ -1,6 +1,8 @@
 'use strict';
 
 var Curry = require("bs-platform/lib/js/curry.js");
+var Pervasives = require("bs-platform/lib/js/pervasives.js");
+var Caml_format = require("bs-platform/lib/js/caml_format.js");
 
 function flip(f, a, b) {
   return Curry._2(f, b, a);
@@ -24,12 +26,21 @@ function pipe(f, g, x) {
   return Curry._1(g, Curry._1(f, x));
 }
 
+function id(x) {
+  return x;
+}
+
+var intOfString = Caml_format.caml_int_of_string;
+
 var Fn = /* module */[
   /* flip */flip,
   /* vtap */vtap,
   /* tap */tap,
   /* compose */compose,
-  /* pipe */pipe
+  /* pipe */pipe,
+  /* id */id,
+  /* stringOfInt */Pervasives.string_of_int,
+  /* intOfString */intOfString
 ];
 
 function $great$great$eq(x, f) {

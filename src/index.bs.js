@@ -1,54 +1,49 @@
 'use strict';
 
 var Curry = require("bs-platform/lib/js/curry.js");
+var ReactDOMRe = require("reason-react/src/ReactDOMRe.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
-var Shell$ReasonmlCodeSplit = require("./Core/Shell.bs.js");
+var Core$ReasonmlCodeSplit = require("./Core/Core.bs.js");
+var Layout$ReasonmlCodeSplit = require("./Layout.bs.js");
+var Routes$ReasonmlCodeSplit = require("./Routes.bs.js");
 var LazyFaq$ReasonmlCodeSplit = require("./Faq/LazyFaq.bs.js");
 var LazyHome$ReasonmlCodeSplit = require("./Home/LazyHome.bs.js");
+var NotFound$ReasonmlCodeSplit = require("./NotFound/NotFound.bs.js");
+var Placeholder$ReasonmlCodeSplit = require("./Placeholder.bs.js");
+var LazyDeepLink$ReasonmlCodeSplit = require("./DeepLink/LazyDeepLink.bs.js");
 
 require("./index.css");
 
-function home() {
-  return Curry._1(LazyHome$ReasonmlCodeSplit.Importable[/* import */1], /* () */0).then((function (Home) {
-                return Promise.resolve(ReasonReact.element(/* None */0, /* None */0, Curry._1(Home[/* make */1], /* array */[])));
-              }));
-}
-
-function faq() {
-  return Curry._1(LazyFaq$ReasonmlCodeSplit.Importable[/* import */1], /* () */0).then((function (Faq) {
-                return Promise.resolve(ReasonReact.element(/* None */0, /* None */0, Curry._1(Faq[/* make */1], /* array */[])));
-              }));
-}
-
-function make(url) {
-  var match = url[/* path */0];
-  if (match) {
-    switch (match[0]) {
-      case "faq" : 
-          if (match[1]) {
-            return home(/* () */0);
-          } else {
-            return faq(/* () */0);
-          }
-      case "test" : 
-          var match$1 = match[1];
-          if (match$1 && match$1[0] === "deep" && !match$1[1]) {
-            return faq(/* () */0);
-          } else {
-            return home(/* () */0);
-          }
-          break;
-      default:
-        return home(/* () */0);
+function resolver(param) {
+  if (typeof param === "number") {
+    if (param !== 3502774) {
+      if (param !== 803993151) {
+        return Promise.resolve(ReasonReact.element(/* None */0, /* None */0, NotFound$ReasonmlCodeSplit.make(/* array */[])));
+      } else {
+        return LazyHome$ReasonmlCodeSplit.load(/* () */0);
+      }
+    } else {
+      return LazyFaq$ReasonmlCodeSplit.load(/* () */0);
     }
+  } else if (param[0] !== 718723174) {
+    return Promise.resolve(ReasonReact.element(/* None */0, /* None */0, NotFound$ReasonmlCodeSplit.make(/* array */[])));
   } else {
-    return home(/* () */0);
+    return LazyDeepLink$ReasonmlCodeSplit.load(/* () */0);
   }
 }
 
-var App = Shell$ReasonmlCodeSplit.MakeBrowserApplication(/* module */[/* make */make]);
+var Shell = Core$ReasonmlCodeSplit.Create(/* module */[
+      /* delay */0,
+      /* matcher */Routes$ReasonmlCodeSplit.matcher,
+      /* resolver */resolver
+    ]);
 
-Curry._1(App[/* bootstrap */0], "root");
+var app = ReasonReact.element(/* None */0, /* None */0, Curry._1(Shell[/* make */1], (function (isLoading, view) {
+            return ReasonReact.element(/* None */0, /* None */0, Layout$ReasonmlCodeSplit.make(/* array */[isLoading !== 0 ? ReasonReact.element(/* None */0, /* None */0, Placeholder$ReasonmlCodeSplit.make(/* array */[])) : view]));
+          })));
 
-exports.App = App;
+ReactDOMRe.renderToElementWithId(app, "root");
+
+exports.Shell = Shell;
+exports.app = app;
 /*  Not a pure module */

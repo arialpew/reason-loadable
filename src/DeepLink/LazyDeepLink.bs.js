@@ -6,7 +6,7 @@ var Utils$ReasonmlCodeSplit = require("../Core/Utils.bs.js");
 var Import$ReasonmlCodeSplit = require("../Core/Import.bs.js");
 
 function doImport() {
-  return import("./ImportableFaq");
+  return import("./ImportableDeepLink");
 }
 
 var LazyModule = /* module */[/* doImport */doImport];
@@ -14,8 +14,8 @@ var LazyModule = /* module */[/* doImport */doImport];
 var Importable = Import$ReasonmlCodeSplit.Create(LazyModule);
 
 function make(param) {
-  return param.then((function (Faq) {
-                return Promise.resolve(ReasonReact.element(/* None */0, /* None */0, Curry._1(Faq[/* make */1], /* array */[])));
+  return param.then((function (DeepLink) {
+                return Promise.resolve(ReasonReact.element(/* None */0, /* None */0, Curry._1(DeepLink[/* make */1], /* array */[])));
               }));
 }
 
