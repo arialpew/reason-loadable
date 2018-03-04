@@ -2,5 +2,5 @@ let component = ReasonReact.statelessComponent("Placeholder");
 
 let make = _children => {
   ...component,
-  render: _self => <h1> <String label="Loading ..." /> </h1>
+  render: _self => <h1> <Text label="Loading ..." /> </h1>
 };

@@ -1,4 +1,4 @@
-let component = ReasonReact.statelessComponent("String");
+let component = ReasonReact.statelessComponent("Text");
 
 let make = (~label, _children) => {
   ...component,

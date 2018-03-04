@@ -10,10 +10,10 @@ let make = _children => {
                (
                  switch (Routes.matcher(route.path)) {
                  | `DeepLink(Some(page)) when Utils.Fn.intOfString(page) >= 42 =>
-                   <String label=("Super Deep Link : " ++ page) />
+                   <Text label=("Super Deep Link : " ++ page) />
                  | `DeepLink(Some(page)) =>
-                   <String label=("Deep Link : " ++ page) />
-                 | _ => <String label="Deep Link : 0" />
+                   <Text label=("Deep Link : " ++ page) />
+                 | _ => <Text label="Deep Link : 0" />
                  }
                )
              </h1>

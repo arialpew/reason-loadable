@@ -2,7 +2,7 @@
 
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 
-var component = ReasonReact.statelessComponent("String");
+var component = ReasonReact.statelessComponent("Text");
 
 function make(label, _) {
   var newrecord = component.slice();

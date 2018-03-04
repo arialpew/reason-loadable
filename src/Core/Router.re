@@ -20,3 +20,11 @@ module Context =
       let defaultValue = initialState();
     }
   );
+
+module Link = {
+  let component = ReasonReact.statelessComponent("Link");
+  let make = (~href, ~label, _children) => {
+    ...component,
+    render: _self => <a onClick=(redirect(href))> <Text label /> </a>
+  };
+};

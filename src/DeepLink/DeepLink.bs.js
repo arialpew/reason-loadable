@@ -3,10 +3,10 @@
 var Curry = require("bs-platform/lib/js/curry.js");
 var React = require("react");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
+var Text$ReasonmlCodeSplit = require("../Core/Text.bs.js");
 var Utils$ReasonmlCodeSplit = require("../Core/Utils.bs.js");
 var Router$ReasonmlCodeSplit = require("../Core/Router.bs.js");
 var Routes$ReasonmlCodeSplit = require("../Routes.bs.js");
-var String$ReasonmlCodeSplit = require("../Core/String.bs.js");
 
 var component = ReasonReact.statelessComponent("DeepLink");
 
@@ -25,13 +25,13 @@ function make() {
                           var match$1 = match[1];
                           if (match$1) {
                             var page = match$1[0];
-                            tmp = Utils$ReasonmlCodeSplit.Fn[/* intOfString */7](page) >= 42 ? ReasonReact.element(/* None */0, /* None */0, String$ReasonmlCodeSplit.make("Super Deep Link : " + page, /* array */[])) : ReasonReact.element(/* None */0, /* None */0, String$ReasonmlCodeSplit.make("Deep Link : " + page, /* array */[]));
+                            tmp = Utils$ReasonmlCodeSplit.Fn[/* intOfString */7](page) >= 42 ? ReasonReact.element(/* None */0, /* None */0, Text$ReasonmlCodeSplit.make("Super Deep Link : " + page, /* array */[])) : ReasonReact.element(/* None */0, /* None */0, Text$ReasonmlCodeSplit.make("Deep Link : " + page, /* array */[]));
                           } else {
                             exit = 1;
                           }
                         }
                         if (exit === 1) {
-                          tmp = ReasonReact.element(/* None */0, /* None */0, String$ReasonmlCodeSplit.make("Deep Link : 0", /* array */[]));
+                          tmp = ReasonReact.element(/* None */0, /* None */0, Text$ReasonmlCodeSplit.make("Deep Link : 0", /* array */[]));
                         }
                         return React.createElement("h1", undefined, tmp);
                       })));
