@@ -1,11 +1,14 @@
-'use strict';
 
-var DeepLink$ReasonmlCodeSplit = require("./DeepLink.bs.js");
+
+import * as DeepLink$ReasonmlCodeSplit from "./DeepLink.bs.js";
 
 var importable = /* DeepLink-ReasonmlCodeSplit */[
   DeepLink$ReasonmlCodeSplit.component,
   DeepLink$ReasonmlCodeSplit.make
 ];
 
-exports.importable = importable;
+export {
+  importable ,
+  
+}
 /* DeepLink-ReasonmlCodeSplit Not a pure module */

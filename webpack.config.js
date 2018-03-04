@@ -65,6 +65,6 @@ module.exports = {
     }),
     only(isProd, () => new WebpackManifestPlugin()),
     only(isProd, () => new CleanWebpackPlugin(["dist-webpack"])),
-    // only(isProd, new BundleAnalyzerPlugin()),
+    // only(isProd, () => new BundleAnalyzerPlugin()),
   ],
 };

@@ -1,9 +1,9 @@
-'use strict';
 
-var Curry = require("bs-platform/lib/js/curry.js");
-var ReasonReact = require("reason-react/src/ReasonReact.js");
-var Utils$ReasonmlCodeSplit = require("../Core/Utils.bs.js");
-var Import$ReasonmlCodeSplit = require("../Core/Import.bs.js");
+
+import * as Curry from "bs-platform/lib/es6/curry.js";
+import * as ReasonReact from "reason-react/src/ReasonReact.js";
+import * as Utils$ReasonmlCodeSplit from "../Core/Utils.bs.js";
+import * as Import$ReasonmlCodeSplit from "../Core/Import.bs.js";
 
 function doImport() {
   return import("./ImportableFaq");
@@ -27,8 +27,11 @@ function load(param) {
   return partial_arg$1(partial_arg, make, param);
 }
 
-exports.LazyModule = LazyModule;
-exports.Importable = Importable;
-exports.make = make;
-exports.load = load;
+export {
+  LazyModule ,
+  Importable ,
+  make ,
+  load ,
+  
+}
 /* Importable Not a pure module */

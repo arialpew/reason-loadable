@@ -1,16 +1,16 @@
-'use strict';
 
-var Curry = require("bs-platform/lib/js/curry.js");
-var ReactDOMRe = require("reason-react/src/ReactDOMRe.js");
-var ReasonReact = require("reason-react/src/ReasonReact.js");
-var Core$ReasonmlCodeSplit = require("./Core/Core.bs.js");
-var Layout$ReasonmlCodeSplit = require("./Layout.bs.js");
-var Routes$ReasonmlCodeSplit = require("./Routes.bs.js");
-var LazyFaq$ReasonmlCodeSplit = require("./Faq/LazyFaq.bs.js");
-var LazyHome$ReasonmlCodeSplit = require("./Home/LazyHome.bs.js");
-var NotFound$ReasonmlCodeSplit = require("./NotFound/NotFound.bs.js");
-var Placeholder$ReasonmlCodeSplit = require("./Placeholder.bs.js");
-var LazyDeepLink$ReasonmlCodeSplit = require("./DeepLink/LazyDeepLink.bs.js");
+
+import * as Curry from "bs-platform/lib/es6/curry.js";
+import * as ReactDOMRe from "reason-react/src/ReactDOMRe.js";
+import * as ReasonReact from "reason-react/src/ReasonReact.js";
+import * as Core$ReasonmlCodeSplit from "./Core/Core.bs.js";
+import * as Layout$ReasonmlCodeSplit from "./Layout.bs.js";
+import * as Routes$ReasonmlCodeSplit from "./Routes.bs.js";
+import * as LazyFaq$ReasonmlCodeSplit from "./Faq/LazyFaq.bs.js";
+import * as LazyHome$ReasonmlCodeSplit from "./Home/LazyHome.bs.js";
+import * as NotFound$ReasonmlCodeSplit from "./NotFound/NotFound.bs.js";
+import * as Placeholder$ReasonmlCodeSplit from "./Placeholder.bs.js";
+import * as LazyDeepLink$ReasonmlCodeSplit from "./DeepLink/LazyDeepLink.bs.js";
 
 require("./index.css");
 
@@ -44,6 +44,9 @@ var app = ReasonReact.element(/* None */0, /* None */0, Curry._1(Shell[/* make *
 
 ReactDOMRe.renderToElementWithId(app, "root");
 
-exports.Shell = Shell;
-exports.app = app;
+export {
+  Shell ,
+  app ,
+  
+}
 /*  Not a pure module */

@@ -1,9 +1,9 @@
-'use strict';
 
-var React = require("react");
-var Caml_array = require("bs-platform/lib/js/caml_array.js");
-var ReasonReact = require("reason-react/src/ReasonReact.js");
-var Router$ReasonmlCodeSplit = require("./Core/Router.bs.js");
+
+import * as React from "react";
+import * as Caml_array from "bs-platform/lib/es6/caml_array.js";
+import * as ReasonReact from "reason-react/src/ReasonReact.js";
+import * as Router$ReasonmlCodeSplit from "./Core/Router.bs.js";
 
 var component = ReasonReact.statelessComponent("Layout");
 
@@ -15,6 +15,9 @@ function make(children) {
   return newrecord;
 }
 
-exports.component = component;
-exports.make = make;
+export {
+  component ,
+  make ,
+  
+}
 /* component Not a pure module */

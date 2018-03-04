@@ -1,12 +1,12 @@
-'use strict';
 
-var Curry = require("bs-platform/lib/js/curry.js");
-var React = require("react");
-var ReasonReact = require("reason-react/src/ReasonReact.js");
-var Text$ReasonmlCodeSplit = require("../Core/Text.bs.js");
-var Utils$ReasonmlCodeSplit = require("../Core/Utils.bs.js");
-var Router$ReasonmlCodeSplit = require("../Core/Router.bs.js");
-var Routes$ReasonmlCodeSplit = require("../Routes.bs.js");
+
+import * as Curry from "bs-platform/lib/es6/curry.js";
+import * as React from "react";
+import * as ReasonReact from "reason-react/src/ReasonReact.js";
+import * as Text$ReasonmlCodeSplit from "../Core/Text.bs.js";
+import * as Utils$ReasonmlCodeSplit from "../Core/Utils.bs.js";
+import * as Router$ReasonmlCodeSplit from "../Core/Router.bs.js";
+import * as Routes$ReasonmlCodeSplit from "../Routes.bs.js";
 
 var component = ReasonReact.statelessComponent("DeepLink");
 
@@ -39,6 +39,9 @@ function make() {
   return newrecord;
 }
 
-exports.component = component;
-exports.make = make;
+export {
+  component ,
+  make ,
+  
+}
 /* component Not a pure module */

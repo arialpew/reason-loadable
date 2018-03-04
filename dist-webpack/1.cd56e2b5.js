@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{23:function(e,n,t){"use strict";var o=t(3),c=t(0),a=t(4),i=c.statelessComponent("Home");n.component=i,n.make=function(){var e=i.slice();return e[9]=function(){return o.createElement("h1",void 0,c.element(0,0,a.make("Home",[])))},e}},26:function(e,n,t){"use strict";var o=t(23),c=[o.component,o.make];n.importable=c}}]);

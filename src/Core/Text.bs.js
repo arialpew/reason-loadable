@@ -1,6 +1,6 @@
-'use strict';
 
-var ReasonReact = require("reason-react/src/ReasonReact.js");
+
+import * as ReasonReact from "reason-react/src/ReasonReact.js";
 
 var component = ReasonReact.statelessComponent("Text");
 
@@ -12,6 +12,9 @@ function make(label, _) {
   return newrecord;
 }
 
-exports.component = component;
-exports.make = make;
+export {
+  component ,
+  make ,
+  
+}
 /* component Not a pure module */

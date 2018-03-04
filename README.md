@@ -14,7 +14,6 @@ I'm working on a big rework so wait a bit.
 # Dependencies
 
 - React & ReactDOM & ReasonReact & ReasonReactContext.
-- QueryString.
 - BuckleScript core API for basic operation (List, String, ...).
 
 # Know issues
@@ -27,24 +26,20 @@ I'm working on a big rework so wait a bit.
 
 ### Parcel
 
-- Main bundle : xKb (main).
-- Main CSS bundle : xKb.
-- HTML : xKb.
-- Bundle #1 (Home) : xKb.
-- Bundle #2 (FAQ) : xKb.
+- Main bundle : 198Kb (main).
+- Main CSS bundle : less than 1Kb.
+- HTML : less than 1Kb.
+- Bundle #1 (Home) : 2Kb.
+- Bundle #2 (FAQ) : 2Kb.
+- Bundle #2 (DeepLink) : 2Kb.
 - Manifest : inline.
 
 ### Webpack
 
-- Main bundle : xKb (main).
-- Main CSS bundle : xKb.
-- HTML : xKb.
-- Bundle #1 (Home) : xKb.
-- Bundle #2 (Faq) : xKb.
-- Manifest : xKb.
-
-# Future
-
-- PWA (service worker, manifest, Lighthouse test, ...) ?
-- Elegant typed CSS solution ?
-- Prepack ?
+- Main bundle : 125Kb (main).
+- Main CSS bundle : less than 1Kb.
+- HTML : less than 1Kb.
+- Bundle #1 (Home) : less than 1Kb.
+- Bundle #2 (Faq) : less than 1Kb.
+- Bundle #3 (DeepLink) : less than 1Kb.
+- Manifest : less than 1Kb.

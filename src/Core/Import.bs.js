@@ -1,6 +1,6 @@
-'use strict';
 
-var Utils$ReasonmlCodeSplit = require("./Utils.bs.js");
+
+import * as Utils$ReasonmlCodeSplit from "./Utils.bs.js";
 
 function Create(Module) {
   var resolver = function (untypedPayload) {
@@ -19,5 +19,8 @@ function Create(Module) {
         ];
 }
 
-exports.Create = Create;
+export {
+  Create ,
+  
+}
 /* No side effect */

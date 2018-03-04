@@ -1,8 +1,8 @@
-'use strict';
 
-var Curry = require("bs-platform/lib/js/curry.js");
-var Pervasives = require("bs-platform/lib/js/pervasives.js");
-var Caml_format = require("bs-platform/lib/js/caml_format.js");
+
+import * as Curry from "bs-platform/lib/es6/curry.js";
+import * as Pervasives from "bs-platform/lib/es6/pervasives.js";
+import * as Caml_format from "bs-platform/lib/es6/caml_format.js";
 
 function flip(f, a, b) {
   return Curry._2(f, b, a);
@@ -57,6 +57,9 @@ var Infix = /* module */[
   /* >>= */$great$great$eq
 ];
 
-exports.Fn = Fn;
-exports.Infix = Infix;
+export {
+  Fn ,
+  Infix ,
+  
+}
 /* No side effect */

@@ -1,9 +1,9 @@
-'use strict';
 
-var React = require("react");
-var ReasonReact = require("reason-react/src/ReasonReact.js");
-var ReasonReactContext = require("reason-react-context/src/reasonReactContext.bs.js");
-var Text$ReasonmlCodeSplit = require("./Text.bs.js");
+
+import * as React from "react";
+import * as ReasonReact from "reason-react/src/ReasonReact.js";
+import * as ReasonReactContext from "reason-react-context/src/reasonReactContext.bs.js";
+import * as Text$ReasonmlCodeSplit from "./Text.bs.js";
 
 function redirect(path, $$event) {
   $$event.preventDefault();
@@ -48,12 +48,15 @@ var unwatchUrl = ReasonReact.Router[2];
 
 var dangerouslyGetInitialUrl = ReasonReact.Router[3];
 
-exports.push = push;
-exports.watchUrl = watchUrl;
-exports.unwatchUrl = unwatchUrl;
-exports.dangerouslyGetInitialUrl = dangerouslyGetInitialUrl;
-exports.redirect = redirect;
-exports.initialState = initialState;
-exports.Context = Context;
-exports.Link = Link;
+export {
+  push ,
+  watchUrl ,
+  unwatchUrl ,
+  dangerouslyGetInitialUrl ,
+  redirect ,
+  initialState ,
+  Context ,
+  Link ,
+  
+}
 /* Context Not a pure module */

@@ -1,10 +1,10 @@
-'use strict';
 
-var Block = require("bs-platform/lib/js/block.js");
-var Curry = require("bs-platform/lib/js/curry.js");
-var ReasonReact = require("reason-react/src/ReasonReact.js");
-var Utils$ReasonmlCodeSplit = require("./Utils.bs.js");
-var Router$ReasonmlCodeSplit = require("./Router.bs.js");
+
+import * as Block from "bs-platform/lib/es6/block.js";
+import * as Curry from "bs-platform/lib/es6/curry.js";
+import * as ReasonReact from "reason-react/src/ReasonReact.js";
+import * as Utils$ReasonmlCodeSplit from "./Utils.bs.js";
+import * as Router$ReasonmlCodeSplit from "./Router.bs.js";
 
 function Create(X) {
   var component = ReasonReact.reducerComponent("App");
@@ -101,5 +101,8 @@ function Create(X) {
         ];
 }
 
-exports.Create = Create;
+export {
+  Create ,
+  
+}
 /* ReasonReact Not a pure module */

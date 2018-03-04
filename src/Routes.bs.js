@@ -1,4 +1,4 @@
-'use strict';
+
 
 
 function matcher(param) {
@@ -60,5 +60,8 @@ function matcher(param) {
   }
 }
 
-exports.matcher = matcher;
+export {
+  matcher ,
+  
+}
 /* No side effect */

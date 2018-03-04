@@ -1,11 +1,14 @@
-'use strict';
 
-var Faq$ReasonmlCodeSplit = require("./Faq.bs.js");
+
+import * as Faq$ReasonmlCodeSplit from "./Faq.bs.js";
 
 var importable = /* Faq-ReasonmlCodeSplit */[
   Faq$ReasonmlCodeSplit.component,
   Faq$ReasonmlCodeSplit.make
 ];
 
-exports.importable = importable;
+export {
+  importable ,
+  
+}
 /* Faq-ReasonmlCodeSplit Not a pure module */

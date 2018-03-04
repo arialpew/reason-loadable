@@ -1,8 +1,8 @@
-'use strict';
 
-var React = require("react");
-var ReasonReact = require("reason-react/src/ReasonReact.js");
-var Text$ReasonmlCodeSplit = require("../Core/Text.bs.js");
+
+import * as React from "react";
+import * as ReasonReact from "reason-react/src/ReasonReact.js";
+import * as Text$ReasonmlCodeSplit from "../Core/Text.bs.js";
 
 var component = ReasonReact.statelessComponent("Home");
 
@@ -14,6 +14,9 @@ function make() {
   return newrecord;
 }
 
-exports.component = component;
-exports.make = make;
+export {
+  component ,
+  make ,
+  
+}
 /* component Not a pure module */
