@@ -7,12 +7,12 @@
     "dev:webpack": "cross-env NODE_ENV=development webpack-dev-server --mode development",
     "build:webpack": "cross-env NODE_ENV=production webpack --mode production",
     "clean": "bsb -clean-world",
+    "interface": "bsc -bs-re-out",
     "make": "cross-env NODE_ENV=production bsb -make-world",
     "makew": "cross-env NODE_ENV=development bsb -make-world -w",
     "test": "jest",
     "testw": "jest --watchAll",
     "format": "./refmt.sh",
-    "interface": "bsc -bs-re-out",
     "up": "npm-update-all"
   },
   "devDependencies": {
@@ -28,7 +28,7 @@
     "cross-env": "5.1.3",
     "css-loader": "0.28.10",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
-    "html-webpack-plugin": "github:webpack-contrib/html-webpack-plugin",
+    "html-webpack-plugin": "^3.0.4",
     "jest": "22.4.2",
     "npm-update-all": "1.0.1",
     "parcel-bundler": "1.6.2",
@@ -42,7 +42,6 @@
     "webpack-null-plugin": "0.0.2"
   },
   "dependencies": {
-    "query-string": "5.1.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "reason-react": "0.3.2",
