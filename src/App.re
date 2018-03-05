@@ -9,8 +9,7 @@ let make = _children => {
              (~currentRoute) =>
                switch currentRoute {
                | Home => <Home />
-               | Faq(Some(_)) => <LazyFaq />
-               | Faq(None) => <Faq />
+               | Faq(_) => <LazyFaq />
                | _ => <NotFound />
                }
            )

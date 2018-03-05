@@ -11,7 +11,7 @@ function make(page, isDeepPage, _) {
   var newrecord = component.slice();
   newrecord[/* render */9] = (function () {
       if (isDeepPage !== 0) {
-        return React.createElement("h1", undefined, Utils$ReasonmlCodeSplit.Fn[/* ste */8]("Current page : " + Curry._1(Utils$ReasonmlCodeSplit.Fn[/* stringOfInt */6], page)));
+        return React.createElement("h1", undefined, Utils$ReasonmlCodeSplit.Fn[/* ste */8]("D-E-E-P Current page : " + Curry._1(Utils$ReasonmlCodeSplit.Fn[/* stringOfInt */6], page)));
       } else {
         return React.createElement("h1", undefined, Utils$ReasonmlCodeSplit.Fn[/* ste */8]("Current page : " + Curry._1(Utils$ReasonmlCodeSplit.Fn[/* stringOfInt */6], page)));
       }

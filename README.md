@@ -24,10 +24,10 @@ Pro : zero-configuration.
 
 Cons : doesn't provide threeshaking for the moment so the bundle size is larger than Webpack.
 
-- Main bundle : 192Kb (main).
+- Main bundle : 189Kb (main).
 - Main CSS bundle : less than 1Kb.
 - HTML : less than 1Kb.
-- Bundle #1 (FAQ) : less than 2Kb.
+- Bundle #1 (FAQ) : 10Kb.
 - Bundle #2 (Deep) : less than 2Kb.
 - Manifest : inline.
 
@@ -37,7 +37,7 @@ Pro : best bundle size.
 
 Cons : require a small configuration.
 
-- Main bundle : 124Kb (main).
+- Main bundle : 123Kb (main).
 - Main CSS bundle : less than 1Kb.
 - HTML : less than 1Kb.
 - Bundle #1 (FAQ) : less than 1Kb.

@@ -2,7 +2,6 @@
 
 import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as ReasonReact from "reason-react/src/ReasonReact.js";
-import * as Deep$ReasonmlCodeSplit from "./Deep/Deep.bs.js";
 import * as Routes$ReasonmlCodeSplit from "../Routes.bs.js";
 import * as LazyDeep$ReasonmlCodeSplit from "./Deep/LazyDeep.bs.js";
 
@@ -22,14 +21,14 @@ function make() {
                             if (page >= 42) {
                               return ReasonReact.element(/* None */0, /* None */0, LazyDeep$ReasonmlCodeSplit.make(page, /* true */1, /* array */[]));
                             } else {
-                              return ReasonReact.element(/* None */0, /* None */0, Deep$ReasonmlCodeSplit.make(page, /* false */0, /* array */[]));
+                              return ReasonReact.element(/* None */0, /* None */0, LazyDeep$ReasonmlCodeSplit.make(page, /* false */0, /* array */[]));
                             }
                           } else {
                             exit = 1;
                           }
                         }
                         if (exit === 1) {
-                          return ReasonReact.element(/* None */0, /* None */0, Deep$ReasonmlCodeSplit.make(0, /* false */0, /* array */[]));
+                          return ReasonReact.element(/* None */0, /* None */0, LazyDeep$ReasonmlCodeSplit.make(0, /* false */0, /* array */[]));
                         }
                         
                       })));

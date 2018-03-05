@@ -10,7 +10,6 @@ let make = _children =>
     ~fetch=() => Loadable.import("./ImportableFaq"),
     ~onLoading=() => <Placeholder />,
     ~onFail=err => <Badaboom err />,
-    ~render=
-      ((module Component)) => <Component />,
+    ~render=((module Component)) => <Component />,
     [||]
   );

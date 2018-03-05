@@ -2,7 +2,6 @@
 
 import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as ReasonReact from "reason-react/src/ReasonReact.js";
-import * as Faq$ReasonmlCodeSplit from "./Faq/Faq.bs.js";
 import * as Home$ReasonmlCodeSplit from "./Home/Home.bs.js";
 import * as Layout$ReasonmlCodeSplit from "./Theme/Layout.bs.js";
 import * as Routes$ReasonmlCodeSplit from "./Routes.bs.js";
@@ -21,10 +20,8 @@ function make() {
                                     } else {
                                       return ReasonReact.element(/* None */0, /* None */0, NotFound$ReasonmlCodeSplit.make(/* array */[]));
                                     }
-                                  } else if (currentRoute[0]) {
-                                    return ReasonReact.element(/* None */0, /* None */0, LazyFaq$ReasonmlCodeSplit.make(/* array */[]));
                                   } else {
-                                    return ReasonReact.element(/* None */0, /* None */0, Faq$ReasonmlCodeSplit.make(/* array */[]));
+                                    return ReasonReact.element(/* None */0, /* None */0, LazyFaq$ReasonmlCodeSplit.make(/* array */[]));
                                   }
                                 })))]));
     });
