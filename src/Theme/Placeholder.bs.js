@@ -2,14 +2,14 @@
 
 import * as React from "react";
 import * as ReasonReact from "reason-react/src/ReasonReact.js";
-import * as Text$ReasonmlCodeSplit from "./Core/Text.bs.js";
+import * as Utils$ReasonmlCodeSplit from "../Core/Utils.bs.js";
 
 var component = ReasonReact.statelessComponent("Placeholder");
 
 function make() {
   var newrecord = component.slice();
   newrecord[/* render */9] = (function () {
-      return React.createElement("h1", undefined, ReasonReact.element(/* None */0, /* None */0, Text$ReasonmlCodeSplit.make("Loading ...", /* array */[])));
+      return React.createElement("h1", undefined, Utils$ReasonmlCodeSplit.Fn[/* ste */8]("Loading ..."));
     });
   return newrecord;
 }

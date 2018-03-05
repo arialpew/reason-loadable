@@ -1,7 +1,5 @@
 [@bs.val] external require : string => unit = "require";
 
-[@bs.val] external import : string => Js.Promise.t('a) = "";
-
 module Fn = {
   /** Flip function argument. */
   let flip = (f, a, b) => f(b, a);
@@ -21,10 +19,12 @@ module Fn = {
   let pipe = (f, g, x) => g(f(x));
   /** Identity. */
   let id = x => x;
-  /** String of int. */
+  /** Int -> String. */
   let stringOfInt = string_of_int;
-  /** Int of string. */
+  /** String -> Int. */
   let intOfString = int_of_string;
+  /** String -> ReasonReact.reactElement */
+  let ste = ReasonReact.stringToElement;
 };
 
 module Infix = {

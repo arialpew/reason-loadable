@@ -1,3 +1,3 @@
-module type FaqIntf = (module type of Faq);
+module type Interface = (module type of Faq);
 
-let importable: (module FaqIntf) = (module Faq);
+let importable: (module Interface) = (module Faq);

@@ -45,7 +45,8 @@
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "reason-react": "0.3.2",
-    "reason-react-context": "0.1.0"
+    "reason-react-context": "0.1.0",
+    "reason-reroute": "0.0.4"
   },
   "postcss": {
     "modules": false,

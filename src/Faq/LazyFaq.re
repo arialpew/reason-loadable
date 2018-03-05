@@ -1,15 +1,16 @@
-open Utils.Infix;
-
-module LazyModule = {
-  module type firstClassType = (module type of Faq);
-  let doImport = () => Utils.import("./ImportableFaq");
-};
-
-module Importable = Import.Create(LazyModule);
-
-let make =
-  Js.Promise.then_(((module Faq): (module ImportableFaq.FaqIntf)) =>
-    Js.Promise.resolve(<Faq />)
+module Component =
+  Loadable.Create(
+    {
+      module type data = ImportableFaq.Interface;
+    }
   );
 
-let load = Importable.import ||> make;
+let make = _children =>
+  Component.make(
+    ~fetch=() => Loadable.import("./ImportableFaq"),
+    ~onLoading=() => <Placeholder />,
+    ~onFail=err => <Badaboom err />,
+    ~render=
+      ((module Component)) => <Component />,
+    [||]
+  );

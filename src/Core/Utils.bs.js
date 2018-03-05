@@ -32,6 +32,10 @@ function id(x) {
 
 var intOfString = Caml_format.caml_int_of_string;
 
+function ste(prim) {
+  return prim;
+}
+
 var Fn = /* module */[
   /* flip */flip,
   /* vtap */vtap,
@@ -40,7 +44,8 @@ var Fn = /* module */[
   /* pipe */pipe,
   /* id */id,
   /* stringOfInt */Pervasives.string_of_int,
-  /* intOfString */intOfString
+  /* intOfString */intOfString,
+  /* ste */ste
 ];
 
 function $great$great$eq(x, f) {

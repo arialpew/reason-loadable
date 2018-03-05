@@ -4,12 +4,12 @@ import * as React from "react";
 import * as ReasonReact from "reason-react/src/ReasonReact.js";
 import * as Utils$ReasonmlCodeSplit from "../Core/Utils.bs.js";
 
-var component = ReasonReact.statelessComponent("Home");
+var component = ReasonReact.statelessComponent("Badaboom");
 
-function make() {
+function make(err, _) {
   var newrecord = component.slice();
   newrecord[/* render */9] = (function () {
-      return React.createElement("h1", undefined, Utils$ReasonmlCodeSplit.Fn[/* ste */8]("Home"));
+      return React.createElement("h1", undefined, Utils$ReasonmlCodeSplit.Fn[/* ste */8]("Oops, an error happened : " + err));
     });
   return newrecord;
 }
