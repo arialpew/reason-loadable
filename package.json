@@ -48,6 +48,12 @@
     "reason-react-context": "0.1.0",
     "reason-reroute": "0.0.4"
   },
+  "jest": {
+    "transformIgnorePatterns": [],
+    "testMatch": [
+      "**/__tests__/**/*_test.bs.js"
+    ]
+  },
   "postcss": {
     "modules": false,
     "plugins": {

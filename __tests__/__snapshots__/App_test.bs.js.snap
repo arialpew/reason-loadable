@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App render 1`] = `
+<Layout
+  reasonProps={
+    Array [
+      Array [
+        "Layout",
+        [Function],
+        Array [
+          0,
+        ],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        [Function],
+        0,
+        [Function],
+        [Function],
+        0,
+      ],
+    ]
+  }
+/>
+`;
