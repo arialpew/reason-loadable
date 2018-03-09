@@ -33,7 +33,7 @@
     "npm-update-all": "1.0.1",
     "parcel-bundler": "1.6.2",
     "postcss-loader": "2.1.1",
-    "style-loader": "0.20.2",
+    "style-loader": "0.20.3",
     "webpack": "4.1.1",
     "webpack-bundle-analyzer": "2.11.1",
     "webpack-cli": "2.0.10",
