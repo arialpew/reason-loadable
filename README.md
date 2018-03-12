@@ -1,7 +1,7 @@
 # Summary
 
-[![Build Status](https://travis-ci.org/kMeillet/re-loadable.svg?branch=master)](https://travis-ci.org/kMeillet/re-loadable)
-![NPM license](https://img.shields.io/npm/l/re-loadable.svg?style=flat)
+[![Build Status](https://travis-ci.org/kMeillet/reason-loadable.svg?branch=master)](https://travis-ci.org/kMeillet/reason-loadable)
+![NPM license](https://img.shields.io/npm/l/reason-loadable.svg?style=flat)
 
 🔥 A higher order module for loading dynamic components with ReasonReact.
 
@@ -17,7 +17,7 @@
 # Installation
 
 ```sh
-npm install re-loadable bs-dynamic-import --save
+npm install reason-loadable bs-dynamic-import --save
 ```
 
 Then add it to "bsconfig.json" :
@@ -25,7 +25,7 @@ Then add it to "bsconfig.json" :
 ```sh
 "bs-dependencies": [
  "bs-dynamic-import",
- "re-loadable"
+ "reason-loadable"
 ]
 ```
 
@@ -102,7 +102,7 @@ let make = _children => {
 
 **Note :** for browser application, you should use a bundler (Parcel, Webpack, ...) to compile BuckleScript output and get code-splitting work. On server-side (Node.js), you should use Babel with "[babel-plugin-dynamic-import-node](https://github.com/airbnb/babel-plugin-dynamic-import-node)".
 
-[More example are available in repository.](https://github.com/kMeillet/reasonml-code-split/tree/master/examples)
+[More example are available in repository.](https://github.com/kMeillet/reason-loadable/tree/master/examples)
 
 # API
 

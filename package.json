@@ -1,5 +1,5 @@
 {
-  "name": "re-loadable",
+  "name": "reason-loadable",
   "description": "A higher order module for loading dynamic components with ReasonReact",
   "version": "0.1.0",
   "author": "Robin Meillet <robin.meillet@epitech.eu>",
@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kMeillet/re-loadable.git"
+    "url": "git+https://github.com/kMeillet/reason-loadable.git"
   },
   "keywords": [
     "reason",
@@ -48,7 +48,7 @@
     "chunksplit"
   ],
   "bugs": {
-    "url": "https://github.com/kMeillet/re-loadable/issues"
+    "url": "https://github.com/kMeillet/reason-loadable/issues"
   },
-  "homepage": "https://github.com/kMeillet/re-loadable#readme"
+  "homepage": "https://github.com/kMeillet/reason-loadable#readme"
 }
