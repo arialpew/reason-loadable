@@ -39,7 +39,7 @@ Some of the most common problematic patterns that were covered include :
 
 * **Load [ReasonReact](https://github.com/reasonml/reason-react) component dynamically**. ✔️
 * **Multiple component import in parallel**. ❌
-* **Interopt with JavaScript component**. ❌
+* **Interop with JavaScript component**. ❌
 * **Full SSR support**. ❌
 * **Preloading**. ❌
 
