@@ -1,18 +1,13 @@
 {
-  "name": "re-loadable",
+  "name": "with-webpack",
   "bsc-flags": ["-bs-no-version-header", "-bs-super-errors"],
   "reason": { "react-jsx": 2 },
-  "bs-dependencies": ["reason-react", "bs-dynamic-import"],
-  "bs-dev-dependencies": ["@glennsl/bs-jest", "bs-react-test-renderer"],
+  "bs-dependencies": ["reason-react", "reason-reroute", "re-loadable", "bs-dynamic-import"],
+  "bs-dev-dependencies": [],
   "sources": [
     {
       "dir": "src",
       "subdirs": true
-    },
-    {
-      "dir": "__tests__",
-      "subdirs": true,
-      "type": "dev"
     }
   ],
   "package-specs": {
@@ -20,5 +15,6 @@
     "in-source": true
   },
   "suffix": ".bs.js",
+  "namespace": true,
   "refmt": 3
 }

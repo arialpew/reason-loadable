@@ -1,52 +1,31 @@
 {
-  "name": "reasonml-code-split",
-  "version": "0.0.1",
+  "name": "re-loadable",
+  "description": "A higher order module for loading dynamic components with ReasonReact",
+  "version": "0.1.0",
+  "author": "Robin Meillet <robin.meillet@epitech.eu>",
+  "license": "MIT",
   "scripts": {
-    "dev:parcel": "cross-env NODE_ENV=development parcel index-parcel.html --out-dir ./dist-parcel --no-cache",
-    "build:parcel": "cross-env NODE_ENV=production parcel build index-parcel.html --out-dir ./dist-parcel --public-url /",
-    "dev:webpack": "cross-env NODE_ENV=development webpack-dev-server --mode development",
-    "build:webpack": "cross-env NODE_ENV=production webpack --mode production",
-    "clean": "bsb -clean-world",
-    "interface": "bsc -bs-re-out",
-    "make": "cross-env NODE_ENV=production bsb -make-world",
-    "makew": "cross-env NODE_ENV=development bsb -make-world -w",
+    "make": "bsb -make-world",
+    "makew": "bsb -make-world -w",
     "test": "jest",
     "testw": "jest --watchAll",
     "format": "./refmt.sh",
-    "up": "npm-update-all"
+    "interface": "bsc -bs-re-out",
+    "clean": "bsb -clean-world"
   },
   "devDependencies": {
-    "autoprefixer": "8.1.0",
-    "babel-core": "6.26.0",
-    "babel-loader": "7.1.4",
-    "babel-preset-react-app": "3.1.1",
-    "bs-jest": "0.3.2",
-    "bs-platform": "2.2.2",
-    "bs-react-test-renderer": "2.0.0",
-    "bsb-js": "1.0.2",
-    "clean-webpack-plugin": "0.1.19",
-    "cross-env": "5.1.4",
-    "css-loader": "0.28.10",
-    "extract-text-webpack-plugin": "4.0.0-beta.0",
-    "html-webpack-plugin": "3.0.6",
-    "jest": "22.4.2",
-    "npm-update-all": "1.0.1",
-    "parcel-bundler": "1.6.2",
-    "postcss-loader": "2.1.1",
-    "style-loader": "0.20.3",
-    "webpack": "4.1.1",
-    "webpack-bundle-analyzer": "2.11.1",
-    "webpack-cli": "2.0.10",
-    "webpack-dev-server": "3.1.0",
-    "webpack-manifest-plugin": "2.0.0-rc.2",
-    "webpack-null-plugin": "0.0.2"
+    "@glennsl/bs-jest": "^0.4.2",
+    "babel-core": "^6.26.0",
+    "babel-preset-react-app": "^3.1.1",
+    "bs-platform": "^2.2.2",
+    "bs-react-test-renderer": "^2.0.0",
+    "jest": "^22.4.2"
   },
   "dependencies": {
-    "react": "16.2.0",
-    "react-dom": "16.2.0",
-    "reason-react": "0.3.4",
-    "reason-react-context": "0.1.0",
-    "reason-reroute": "0.0.4"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "reason-react": "^0.3.4",
+    "bs-dynamic-import": "^0.1.0"
   },
   "jest": {
     "transformIgnorePatterns": [],
@@ -54,18 +33,22 @@
       "**/__tests__/**/*_test.bs.js"
     ]
   },
-  "postcss": {
-    "modules": false,
-    "plugins": {
-      "autoprefixer": {
-        "browsers": [
-          ">1%",
-          "last 4 versions",
-          "Firefox ESR",
-          "not ie < 9"
-        ],
-        "flexbox": "no-2009"
-      }
-    }
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kMeillet/re-loadable.git"
+  },
+  "keywords": [
+    "reason",
+    "reasonreact",
+    "dynamic",
+    "module",
+    "import",
+    "code-splitting",
+    "lazy-loading",
+    "chunksplit"
+  ],
+  "bugs": {
+    "url": "https://github.com/kMeillet/re-loadable/issues"
+  },
+  "homepage": "https://github.com/kMeillet/re-loadable#readme"
 }

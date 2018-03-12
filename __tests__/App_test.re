@@ -2,10 +2,9 @@ open Jest;
 
 open Expect;
 
-describe("App", () =>
-  test("render", () =>
-    <App />
-    |> ReactShallowRenderer.renderWithRenderer
+describe("test", () =>
+  test("test", () =>
+    1 + 1
     |> expect
     |> toMatchSnapshot
   )

@@ -9,8 +9,5 @@ install:
   - npm install
 
 script:
-  - npm run clean
   - npm run make
-  - npm run build:webpack
-  - npm run clean
-  - npm run build:parcel  
+  - npm run test

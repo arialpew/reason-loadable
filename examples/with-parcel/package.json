@@ -1,0 +1,29 @@
+{
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development parcel index.html --no-cache",
+    "build": "cross-env NODE_ENV=production parcel build index.html --public-url /",
+    "clean": "bsb -clean-world",
+    "interface": "bsc -bs-re-out",
+    "make": "cross-env NODE_ENV=production bsb -make-world",
+    "makew": "cross-env NODE_ENV=development bsb -make-world -w",
+    "up": "npm-update-all"
+  },
+  "devDependencies": {
+    "autoprefixer": "8.1.0",
+    "babel-core": "6.26.0",
+    "babel-preset-react-app": "3.1.1",
+    "bs-platform": "2.2.2",
+    "bsb-js": "^1.0.2",
+    "cross-env": "5.1.4",
+    "npm-update-all": "1.0.1",
+    "parcel-bundler": "1.6.2"
+  },
+  "dependencies": {
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "reason-react": "0.3.4",
+    "reason-reroute": "0.0.4",
+    "bs-dynamic-import": "*",
+    "re-loadable": "*"
+  }
+}
