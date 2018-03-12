@@ -96,13 +96,13 @@ let make = _children => {
   render: _self =>
     <div>
       <LazyHelloWorld name="Zeus" />
-    <div>
+    </div>
 };
 ```
 
 **Note :** for browser application, you should use a bundler (Parcel, Webpack, ...) to compile BuckleScript output and get code-splitting work. On server-side (Node.js), you should use Babel with "[babel-plugin-dynamic-import-node](https://github.com/airbnb/babel-plugin-dynamic-import-node)".
 
-[More example are available in repository.]((/examples))
+[More example are available in repository.](https://github.com/kMeillet/reasonml-code-split/tree/master/examples)
 
 # API
 
