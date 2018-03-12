@@ -73,9 +73,7 @@ let importable: (module t) = (module HelloWorld);
 
 ```reason
 /* LazyHelloWorld.re */
-module LazyLoadable = ReLoadable.Create({
-  module type t = ImportableHelloWorld.t;
-});
+module LazyLoadable = ReLoadable.Create({ module type t = ImportableHelloWorld.t; });
 
 let make = (~name, _children) =>
   LazyLoadable.make(
@@ -127,12 +125,7 @@ let importable: t = (module X);
 
 ```reason
 /* LazyX.re */
-module Component =
-  ReLoadable.Create(
-    {
-      module type t = ImportableX.t;
-    }
-  );
+module Component = ReLoadable.Create({ module type t = ImportableX.t; });
 
 /* Forward props into render func (not required if component doesn't need props). */
 let make = (~name, _children) =>
