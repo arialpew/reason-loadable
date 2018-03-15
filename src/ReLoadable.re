@@ -48,7 +48,7 @@ module Create = (Config: {module type t;}) => {
               /* Call fetch who return a Promise of importable module. */
               fetch()
               /* Load module. */
-              |> load
+              |> resolve
               /* Don't refine module now, just resolve new state, user should refine module himself on render. */
               >>= (data => self.send(Loaded(data)))
               /* Forward error if some trouble happen. */

@@ -43,7 +43,7 @@ function Create() {
                 /* Sub */[
                   (function () {
                       return setTimeout((function () {
-                                    DynamicImport.$great$great$eq$bang(DynamicImport.$great$great$eq(DynamicImport.load(Curry._1(fetch, /* () */0)), (function (data) {
+                                    DynamicImport.$great$great$eq$bang(DynamicImport.$great$great$eq(DynamicImport.resolve(Curry._1(fetch, /* () */0)), (function (data) {
                                                 return Curry._1(self[/* send */4], /* Loaded */Block.__(1, [data]));
                                               })), (function (err) {
                                             return Curry._1(self[/* send */4], /* Failed */Block.__(0, [String(err)]));
