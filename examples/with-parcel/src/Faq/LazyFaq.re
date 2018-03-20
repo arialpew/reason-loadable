@@ -1,13 +1,12 @@
-module Component =
-  ReLoadable.Create(
-    {
-      module type t = ImportableFaq.t;
-    }
-  );
+module Config = {
+  module type t = (module type of Faq);
+};
+
+module Loadable = ReLoadable.WithRender(Config);
 
 let make = _children =>
-  Component.make(
-    ~fetch=() => DynamicImport.import("./ImportableFaq"),
+  Loadable.make(
+    ~fetch=() => DynamicImport.import("./Faq"),
     ~render=((module LoadedComponent)) => <LoadedComponent />,
     [||]
   );
