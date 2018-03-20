@@ -123,9 +123,7 @@ let make = _children => {
 };
 ```
 
-5) You might be thinking that this is cool but a bit ugly ... it would be inconvenient to have to pass props like "fetch", "onLoading", "onFail", "delay", everytime we want to load "HelloWorld" module dynamically. It could be nice if we can reduce boilerplate.
-
-So in this case, instead of using **"include"**, let’s define a new make function who will create pre-filled component.
+5) You might be thinking that this is cool but a bit ugly ... it would be inconvenient to have to pass props like "fetch", "onLoading", "onFail", "delay", everytime we want to load "HelloWorld" module dynamically. It could be nice if we can reduce boilerplate. So in this case, instead of using **"include"**, let’s define a new make function who will create pre-filled component.
 
 ```reason
 /* LazyHelloWorld.re */
@@ -196,7 +194,7 @@ let make = _children => {
 };
 ```
 
-🔥 Look much better !
+🖌️ Look much better !
 
 **Note :** **"ReLoadable.WithRender"** return a childless LoadableComponent, that mean you literally can't use children ([||]) but have to use "render prop". If you are in favor of "function as children", use **"ReLoadable.WithChildren"**.
 
