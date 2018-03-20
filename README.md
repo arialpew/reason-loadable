@@ -84,7 +84,7 @@ module Config = {
 include ReLoadable.WithRender(Config);
 ```
 
-3) Render dynamic component anywhere in your code like any component, fetch with **"DynamicImport"** module & render 🖌️ !
+3) Render dynamic component anywhere in your code like any component, fetch with **"DynamicImport"** module & render.
 
 ```reason
 /* App.re */
