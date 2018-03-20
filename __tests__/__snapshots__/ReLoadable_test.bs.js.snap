@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ReLoadable.WithChildren children component should render loaded component with children 1`] = `
+exports[`ReLoadable.WithChildren children component should render loaded component 1`] = `
 <p>
   Hello world : WithChildren
 </p>
@@ -12,7 +12,7 @@ exports[`ReLoadable.WithChildren children component should render loading compon
 </p>
 `;
 
-exports[`ReLoadable.WithChildren props should render loaded component with props 1`] = `
+exports[`ReLoadable.WithChildren props should render loaded component 1`] = `
 <p>
   Hello world : WithProps
 </p>
@@ -48,7 +48,7 @@ exports[`ReLoadable.WithChildren pure Loading -> Loaded state transition should 
 </p>
 `;
 
-exports[`ReLoadable.WithRender children component should render loaded component with children 1`] = `
+exports[`ReLoadable.WithRender children component should render loaded component 1`] = `
 <p>
   Hello world : WithChildren
 </p>
@@ -60,7 +60,7 @@ exports[`ReLoadable.WithRender children component should render loading componen
 </p>
 `;
 
-exports[`ReLoadable.WithRender children function should render loaded component with children function 1`] = `
+exports[`ReLoadable.WithRender children function should render loaded component 1`] = `
 <p>
   Hello world : WithChildrenFunc
 </p>
@@ -72,7 +72,7 @@ exports[`ReLoadable.WithRender children function should render loading component
 </p>
 `;
 
-exports[`ReLoadable.WithRender props should render loaded component with props 1`] = `
+exports[`ReLoadable.WithRender props should render loaded component 1`] = `
 <p>
   Hello world : WithProps
 </p>
@@ -108,7 +108,7 @@ exports[`ReLoadable.WithRender pure Loading -> Loaded state transition should re
 </p>
 `;
 
-exports[`Reloadable.WithChildren children function should render loaded component with props 1`] = `
+exports[`Reloadable.WithChildren children function should render loaded component 1`] = `
 <p>
   Hello world : WithChildrenFunc
 </p>
