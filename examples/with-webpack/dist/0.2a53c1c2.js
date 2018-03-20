@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{36:function(n,r,e){},37:function(n,r,e){"use strict";e.r(r);var t=e(8),a=e(7);e(36);var c=a.d("Faq");e.d(r,"importable",function(){return i});var i=[c,function(){var n=c.slice();return n[9]=function(){return t.createElement("h1",{className:"faq"},"FAQ")},n}]}}]);
