@@ -10,7 +10,7 @@
     "autoprefixer": "8.1.0",
     "babel-core": "6.26.0",
     "babel-preset-react-app": "3.1.1",
-    "bs-platform": "2.2.3",
+    "bs-platform": "3.1.5",
     "bsb-js": "1.0.2",
     "cross-env": "5.1.4",
     "parcel-bundler": "1.6.2"

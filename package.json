@@ -17,7 +17,7 @@
     "@glennsl/bs-jest": "0.4.2",
     "babel-core": "6.26.0",
     "babel-preset-react-app": "3.1.1",
-    "bs-platform": "2.2.3",
+    "bs-platform": "3.1.5",
     "bs-react-test-renderer": "2.0.0",
     "jest": "22.4.2"
   },
