@@ -24,7 +24,7 @@ var Loadable = ReLoadable.WithRender(WithPure);
 function make() {
   var func = Curry._4(Loadable[/* make */1], (function () {
           return import("./WithPure.bs.js");
-        }), /* Some */[Utils.__STD_ONFAIL__], /* Some */[Utils.__STD_ONLOADING__], /* Some */[Utils.__STD_DELAY__]);
+        }), Utils.__STD_ONFAIL__, Utils.__STD_ONLOADING__, Utils.__STD_DELAY__);
   return (function (param) {
       return Curry._2(func, param, Utils.__CHILDLESS__);
     });
@@ -40,7 +40,7 @@ var Loadable$1 = ReLoadable.WithChildren(WithPure);
 function make$1(children) {
   return Curry._5(Loadable$1[/* make */1], (function () {
                 return import("./WithPure.bs.js");
-              }), /* Some */[Utils.__STD_ONFAIL__], /* Some */[Utils.__STD_ONLOADING__], /* Some */[Utils.__STD_DELAY__], children);
+              }), Utils.__STD_ONFAIL__, Utils.__STD_ONLOADING__, Utils.__STD_DELAY__, children);
 }
 
 var WithChildren$1 = /* module */[
@@ -58,7 +58,7 @@ var Loadable$2 = ReLoadable.WithRender(WithPure);
 function make$2() {
   var func = Curry._4(Loadable$2[/* make */1], (function () {
           return import("./???.bs.js");
-        }), /* Some */[Utils.__STD_ONFAIL__], /* Some */[Utils.__STD_ONLOADING__], /* Some */[Utils.__STD_DELAY__]);
+        }), Utils.__STD_ONFAIL__, Utils.__STD_ONLOADING__, Utils.__STD_DELAY__);
   return (function (param) {
       return Curry._2(func, param, Utils.__CHILDLESS__);
     });
@@ -74,7 +74,7 @@ var Loadable$3 = ReLoadable.WithChildren(WithPure);
 function make$3(children) {
   return Curry._5(Loadable$3[/* make */1], (function () {
                 return import("./???.bs.js");
-              }), /* Some */[Utils.__STD_ONFAIL__], /* Some */[Utils.__STD_ONLOADING__], /* Some */[Utils.__STD_DELAY__], children);
+              }), Utils.__STD_ONFAIL__, Utils.__STD_ONLOADING__, Utils.__STD_DELAY__, children);
 }
 
 var WithChildren$2 = /* module */[
@@ -92,7 +92,7 @@ var Loadable$4 = ReLoadable.WithRender(WithProps);
 function make$4() {
   var func = Curry._4(Loadable$4[/* make */1], (function () {
           return import("./WithProps.bs.js");
-        }), /* Some */[Utils.__STD_ONFAIL__], /* Some */[Utils.__STD_ONLOADING__], /* Some */[Utils.__STD_DELAY__]);
+        }), Utils.__STD_ONFAIL__, Utils.__STD_ONLOADING__, Utils.__STD_DELAY__);
   return (function (param) {
       return Curry._2(func, param, Utils.__CHILDLESS__);
     });
@@ -108,7 +108,7 @@ var Loadable$5 = ReLoadable.WithChildren(WithProps);
 function make$5(children) {
   return Curry._5(Loadable$5[/* make */1], (function () {
                 return import("./WithProps.bs.js");
-              }), /* Some */[Utils.__STD_ONFAIL__], /* Some */[Utils.__STD_ONLOADING__], /* Some */[Utils.__STD_DELAY__], children);
+              }), Utils.__STD_ONFAIL__, Utils.__STD_ONLOADING__, Utils.__STD_DELAY__, children);
 }
 
 var WithChildren$3 = /* module */[
@@ -126,7 +126,7 @@ var Loadable$6 = ReLoadable.WithRender(WithChildren);
 function make$6() {
   var func = Curry._4(Loadable$6[/* make */1], (function () {
           return import("./WithChildren.bs.js");
-        }), /* Some */[Utils.__STD_ONFAIL__], /* Some */[Utils.__STD_ONLOADING__], /* Some */[Utils.__STD_DELAY__]);
+        }), Utils.__STD_ONFAIL__, Utils.__STD_ONLOADING__, Utils.__STD_DELAY__);
   return (function (param) {
       return Curry._2(func, param, Utils.__CHILDLESS__);
     });
@@ -142,7 +142,7 @@ var Loadable$7 = ReLoadable.WithChildren(WithChildren);
 function make$7(children) {
   return Curry._5(Loadable$7[/* make */1], (function () {
                 return import("./WithChildren.bs.js");
-              }), /* Some */[Utils.__STD_ONFAIL__], /* Some */[Utils.__STD_ONLOADING__], /* Some */[Utils.__STD_DELAY__], children);
+              }), Utils.__STD_ONFAIL__, Utils.__STD_ONLOADING__, Utils.__STD_DELAY__, children);
 }
 
 var WithChildren$4 = /* module */[
@@ -160,7 +160,7 @@ var Loadable$8 = ReLoadable.WithRender(WithChildrenFunc);
 function make$8() {
   var func = Curry._4(Loadable$8[/* make */1], (function () {
           return import("./WithChildrenFunc.bs.js");
-        }), /* Some */[Utils.__STD_ONFAIL__], /* Some */[Utils.__STD_ONLOADING__], /* Some */[Utils.__STD_DELAY__]);
+        }), Utils.__STD_ONFAIL__, Utils.__STD_ONLOADING__, Utils.__STD_DELAY__);
   return (function (param) {
       return Curry._2(func, param, Utils.__CHILDLESS__);
     });
@@ -176,7 +176,7 @@ var Loadable$9 = ReLoadable.WithChildren(WithChildrenFunc);
 function make$9(children) {
   return Curry._5(Loadable$9[/* make */1], (function () {
                 return import("./WithChildrenFunc.bs.js");
-              }), /* Some */[Utils.__STD_ONFAIL__], /* Some */[Utils.__STD_ONLOADING__], /* Some */[Utils.__STD_DELAY__], children);
+              }), Utils.__STD_ONFAIL__, Utils.__STD_ONLOADING__, Utils.__STD_DELAY__, children);
 }
 
 var WithChildren$5 = /* module */[

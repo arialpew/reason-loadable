@@ -10,14 +10,14 @@ var DynamicImport = require("bs-dynamic-import/src/DynamicImport.bs.js");
 var ReactTestRenderer = require("react-test-renderer");
 
 describe("ReLoadable.WithRender pure Loading -> Loaded state transition", (function () {
-        var component = ReactTestRenderer.create(ReasonReact.element(/* None */0, /* None */0, Curry._2(Case.Pure[/* WithRender */0][/* make */1], /* array */[], (function (LoadedComponent) {
-                        return ReasonReact.element(/* None */0, /* None */0, Curry._1(LoadedComponent[/* make */1], /* array */[]));
+        var component = ReactTestRenderer.create(ReasonReact.element(undefined, undefined, Curry._2(Case.Pure[/* WithRender */0][/* make */1], /* array */[], (function (LoadedComponent) {
+                        return ReasonReact.element(undefined, undefined, Curry._1(LoadedComponent[/* make */1], /* array */[]));
                       }))));
         var initial = component.toJSON();
         Jest.test("should render loading component", (function () {
                 return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](initial));
               }));
-        return Jest.testPromise(/* None */0, "should render loaded component", (function () {
+        return Jest.testPromise(undefined, "should render loaded component", (function () {
                       return DynamicImport.$less$$great(Utils.stdTimer(/* () */0), (function () {
                                     return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](component.toJSON()));
                                   }));
@@ -25,14 +25,14 @@ describe("ReLoadable.WithRender pure Loading -> Loaded state transition", (funct
       }));
 
 describe("ReLoadable.WithChildren pure Loading -> Loaded state transition", (function () {
-        var component = ReactTestRenderer.create(ReasonReact.element(/* None */0, /* None */0, Curry._1(Case.Pure[/* WithChildren */1][/* make */1], (function (LoadedComponent) {
-                        return ReasonReact.element(/* None */0, /* None */0, Curry._1(LoadedComponent[/* make */1], /* array */[]));
+        var component = ReactTestRenderer.create(ReasonReact.element(undefined, undefined, Curry._1(Case.Pure[/* WithChildren */1][/* make */1], (function (LoadedComponent) {
+                        return ReasonReact.element(undefined, undefined, Curry._1(LoadedComponent[/* make */1], /* array */[]));
                       }))));
         var initial = component.toJSON();
         Jest.test("should render loading component", (function () {
                 return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](initial));
               }));
-        return Jest.testPromise(/* None */0, "should render loaded component", (function () {
+        return Jest.testPromise(undefined, "should render loaded component", (function () {
                       return DynamicImport.$less$$great(Utils.stdTimer(/* () */0), (function () {
                                     return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](component.toJSON()));
                                   }));
@@ -40,14 +40,14 @@ describe("ReLoadable.WithChildren pure Loading -> Loaded state transition", (fun
       }));
 
 describe("ReLoadable.WithRender pure Loading -> Failed state transition", (function () {
-        var component = ReactTestRenderer.create(ReasonReact.element(/* None */0, /* None */0, Curry._2(Case.Bad[/* WithRender */0][/* make */1], /* array */[], (function (LoadedComponent) {
-                        return ReasonReact.element(/* None */0, /* None */0, Curry._1(LoadedComponent[/* make */1], /* array */[]));
+        var component = ReactTestRenderer.create(ReasonReact.element(undefined, undefined, Curry._2(Case.Bad[/* WithRender */0][/* make */1], /* array */[], (function (LoadedComponent) {
+                        return ReasonReact.element(undefined, undefined, Curry._1(LoadedComponent[/* make */1], /* array */[]));
                       }))));
         var initial = component.toJSON();
         Jest.test("should render loading component", (function () {
                 return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](initial));
               }));
-        return Jest.testPromise(/* None */0, "should render failed component", (function () {
+        return Jest.testPromise(undefined, "should render failed component", (function () {
                       return DynamicImport.$less$$great(Utils.stdTimer(/* () */0), (function () {
                                     return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](component.toJSON()));
                                   }));
@@ -55,14 +55,14 @@ describe("ReLoadable.WithRender pure Loading -> Failed state transition", (funct
       }));
 
 describe("ReLoadable.WithChildren pure Loading -> Failed state transition", (function () {
-        var component = ReactTestRenderer.create(ReasonReact.element(/* None */0, /* None */0, Curry._1(Case.Bad[/* WithChildren */1][/* make */1], (function (LoadedComponent) {
-                        return ReasonReact.element(/* None */0, /* None */0, Curry._1(LoadedComponent[/* make */1], /* array */[]));
+        var component = ReactTestRenderer.create(ReasonReact.element(undefined, undefined, Curry._1(Case.Bad[/* WithChildren */1][/* make */1], (function (LoadedComponent) {
+                        return ReasonReact.element(undefined, undefined, Curry._1(LoadedComponent[/* make */1], /* array */[]));
                       }))));
         var initial = component.toJSON();
         Jest.test("should render loading component", (function () {
                 return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](initial));
               }));
-        return Jest.testPromise(/* None */0, "should render failed component", (function () {
+        return Jest.testPromise(undefined, "should render failed component", (function () {
                       return DynamicImport.$less$$great(Utils.stdTimer(/* () */0), (function () {
                                     return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](component.toJSON()));
                                   }));
@@ -70,14 +70,14 @@ describe("ReLoadable.WithChildren pure Loading -> Failed state transition", (fun
       }));
 
 describe("ReLoadable.WithRender props", (function () {
-        var component = ReactTestRenderer.create(ReasonReact.element(/* None */0, /* None */0, Curry._2(Case.Props[/* WithRender */0][/* make */1], /* array */[], (function (LoadedComponent) {
-                        return ReasonReact.element(/* None */0, /* None */0, Curry._2(LoadedComponent[/* make */1], "WithProps", /* array */[]));
+        var component = ReactTestRenderer.create(ReasonReact.element(undefined, undefined, Curry._2(Case.Props[/* WithRender */0][/* make */1], /* array */[], (function (LoadedComponent) {
+                        return ReasonReact.element(undefined, undefined, Curry._2(LoadedComponent[/* make */1], "WithProps", /* array */[]));
                       }))));
         var initial = component.toJSON();
         Jest.test("should render loading component", (function () {
                 return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](initial));
               }));
-        return Jest.testPromise(/* None */0, "should render loaded component", (function () {
+        return Jest.testPromise(undefined, "should render loaded component", (function () {
                       return DynamicImport.$less$$great(Utils.stdTimer(/* () */0), (function () {
                                     return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](component.toJSON()));
                                   }));
@@ -85,14 +85,14 @@ describe("ReLoadable.WithRender props", (function () {
       }));
 
 describe("ReLoadable.WithChildren props", (function () {
-        var component = ReactTestRenderer.create(ReasonReact.element(/* None */0, /* None */0, Curry._1(Case.Props[/* WithChildren */1][/* make */1], (function (LoadedComponent) {
-                        return ReasonReact.element(/* None */0, /* None */0, Curry._2(LoadedComponent[/* make */1], "WithProps", /* array */[]));
+        var component = ReactTestRenderer.create(ReasonReact.element(undefined, undefined, Curry._1(Case.Props[/* WithChildren */1][/* make */1], (function (LoadedComponent) {
+                        return ReasonReact.element(undefined, undefined, Curry._2(LoadedComponent[/* make */1], "WithProps", /* array */[]));
                       }))));
         var initial = component.toJSON();
         Jest.test("should render loading component", (function () {
                 return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](initial));
               }));
-        return Jest.testPromise(/* None */0, "should render loaded component", (function () {
+        return Jest.testPromise(undefined, "should render loaded component", (function () {
                       return DynamicImport.$less$$great(Utils.stdTimer(/* () */0), (function () {
                                     return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](component.toJSON()));
                                   }));
@@ -100,14 +100,14 @@ describe("ReLoadable.WithChildren props", (function () {
       }));
 
 describe("ReLoadable.WithRender children component", (function () {
-        var component = ReactTestRenderer.create(ReasonReact.element(/* None */0, /* None */0, Curry._2(Case.Children[/* WithRender */0][/* make */1], /* array */[], (function (LoadedComponent) {
-                        return ReasonReact.element(/* None */0, /* None */0, Curry._1(LoadedComponent[/* make */1], /* array */[ReasonReact.element(/* None */0, /* None */0, WithProps.make("WithChildren", /* array */[]))]));
+        var component = ReactTestRenderer.create(ReasonReact.element(undefined, undefined, Curry._2(Case.Children[/* WithRender */0][/* make */1], /* array */[], (function (LoadedComponent) {
+                        return ReasonReact.element(undefined, undefined, Curry._1(LoadedComponent[/* make */1], /* array */[ReasonReact.element(undefined, undefined, WithProps.make("WithChildren", /* array */[]))]));
                       }))));
         var initial = component.toJSON();
         Jest.test("should render loading component", (function () {
                 return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](initial));
               }));
-        return Jest.testPromise(/* None */0, "should render loaded component", (function () {
+        return Jest.testPromise(undefined, "should render loaded component", (function () {
                       return DynamicImport.$less$$great(Utils.stdTimer(/* () */0), (function () {
                                     return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](component.toJSON()));
                                   }));
@@ -115,14 +115,14 @@ describe("ReLoadable.WithRender children component", (function () {
       }));
 
 describe("ReLoadable.WithChildren children component", (function () {
-        var component = ReactTestRenderer.create(ReasonReact.element(/* None */0, /* None */0, Curry._1(Case.Children[/* WithChildren */1][/* make */1], (function (LoadedComponent) {
-                        return ReasonReact.element(/* None */0, /* None */0, Curry._1(LoadedComponent[/* make */1], /* array */[ReasonReact.element(/* None */0, /* None */0, WithProps.make("WithChildren", /* array */[]))]));
+        var component = ReactTestRenderer.create(ReasonReact.element(undefined, undefined, Curry._1(Case.Children[/* WithChildren */1][/* make */1], (function (LoadedComponent) {
+                        return ReasonReact.element(undefined, undefined, Curry._1(LoadedComponent[/* make */1], /* array */[ReasonReact.element(undefined, undefined, WithProps.make("WithChildren", /* array */[]))]));
                       }))));
         var initial = component.toJSON();
         Jest.test("should render loading component", (function () {
                 return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](initial));
               }));
-        return Jest.testPromise(/* None */0, "should render loaded component", (function () {
+        return Jest.testPromise(undefined, "should render loaded component", (function () {
                       return DynamicImport.$less$$great(Utils.stdTimer(/* () */0), (function () {
                                     return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](component.toJSON()));
                                   }));
@@ -130,16 +130,16 @@ describe("ReLoadable.WithChildren children component", (function () {
       }));
 
 describe("ReLoadable.WithRender children function", (function () {
-        var component = ReactTestRenderer.create(ReasonReact.element(/* None */0, /* None */0, Curry._2(Case.ChildrenFunc[/* WithRender */0][/* make */1], /* array */[], (function (LoadedComponent) {
-                        return ReasonReact.element(/* None */0, /* None */0, Curry._2(LoadedComponent[/* make */1], "WithChildrenFunc", (function (text) {
-                                          return ReasonReact.element(/* None */0, /* None */0, WithProps.make(text, /* array */[]));
+        var component = ReactTestRenderer.create(ReasonReact.element(undefined, undefined, Curry._2(Case.ChildrenFunc[/* WithRender */0][/* make */1], /* array */[], (function (LoadedComponent) {
+                        return ReasonReact.element(undefined, undefined, Curry._2(LoadedComponent[/* make */1], "WithChildrenFunc", (function (text) {
+                                          return ReasonReact.element(undefined, undefined, WithProps.make(text, /* array */[]));
                                         })));
                       }))));
         var initial = component.toJSON();
         Jest.test("should render loading component", (function () {
                 return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](initial));
               }));
-        return Jest.testPromise(/* None */0, "should render loaded component", (function () {
+        return Jest.testPromise(undefined, "should render loaded component", (function () {
                       return DynamicImport.$less$$great(Utils.stdTimer(/* () */0), (function () {
                                     return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](component.toJSON()));
                                   }));
@@ -147,16 +147,16 @@ describe("ReLoadable.WithRender children function", (function () {
       }));
 
 describe("Reloadable.WithChildren children function", (function () {
-        var component = ReactTestRenderer.create(ReasonReact.element(/* None */0, /* None */0, Curry._1(Case.ChildrenFunc[/* WithChildren */1][/* make */1], (function (LoadedComponent) {
-                        return ReasonReact.element(/* None */0, /* None */0, Curry._2(LoadedComponent[/* make */1], "WithChildrenFunc", (function (text) {
-                                          return ReasonReact.element(/* None */0, /* None */0, WithProps.make(text, /* array */[]));
+        var component = ReactTestRenderer.create(ReasonReact.element(undefined, undefined, Curry._1(Case.ChildrenFunc[/* WithChildren */1][/* make */1], (function (LoadedComponent) {
+                        return ReasonReact.element(undefined, undefined, Curry._2(LoadedComponent[/* make */1], "WithChildrenFunc", (function (text) {
+                                          return ReasonReact.element(undefined, undefined, WithProps.make(text, /* array */[]));
                                         })));
                       }))));
         var initial = component.toJSON();
         Jest.test("should render loading component", (function () {
                 return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](initial));
               }));
-        return Jest.testPromise(/* None */0, "should render loaded component", (function () {
+        return Jest.testPromise(undefined, "should render loaded component", (function () {
                       return DynamicImport.$less$$great(Utils.stdTimer(/* () */0), (function () {
                                     return Jest.Expect[/* toMatchSnapshot */16](Jest.Expect[/* expect */0](component.toJSON()));
                                   }));
