@@ -23,7 +23,7 @@
     "webpack-bundle-analyzer": "2.11.1",
     "webpack-cli": "2.0.11",
     "webpack-dev-server": "3.1.0",
-    "webpack-manifest-plugin": "2.0.0-rc.2",
+    "webpack-manifest-plugin": "2.0.4",
     "webpack-null-plugin": "0.0.2"
   },
   "dependencies": {
