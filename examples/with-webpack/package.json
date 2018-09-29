@@ -21,7 +21,7 @@
     "style-loader": "0.20.3",
     "webpack": "4.1.1",
     "webpack-bundle-analyzer": "2.11.1",
-    "webpack-cli": "2.0.11",
+    "webpack-cli": "3.1.2",
     "webpack-dev-server": "3.1.0",
     "webpack-manifest-plugin": "2.0.0-rc.2",
     "webpack-null-plugin": "0.0.2"
