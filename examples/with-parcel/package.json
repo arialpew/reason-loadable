@@ -13,7 +13,7 @@
     "bs-platform": "2.2.3",
     "bsb-js": "1.0.2",
     "cross-env": "5.1.4",
-    "parcel-bundler": "1.6.2"
+    "parcel-bundler": "1.10.3"
   },
   "dependencies": {
     "react": "16.2.0",
