@@ -9,7 +9,7 @@
   "devDependencies": {
     "autoprefixer": "8.1.0",
     "babel-core": "6.26.0",
-    "babel-preset-react-app": "3.1.1",
+    "babel-preset-react-app": "5.0.4",
     "bs-platform": "2.2.3",
     "bsb-js": "1.0.2",
     "cross-env": "5.1.4",
