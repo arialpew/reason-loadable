@@ -7,7 +7,7 @@
     "makew": "cross-env NODE_ENV=development bsb -make-world -w"
   },
   "devDependencies": {
-    "autoprefixer": "8.1.0",
+    "autoprefixer": "9.3.1",
     "babel-core": "6.26.0",
     "babel-preset-react-app": "3.1.1",
     "bs-platform": "2.2.3",
