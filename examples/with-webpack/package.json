@@ -27,7 +27,7 @@
     "webpack-null-plugin": "0.0.2"
   },
   "dependencies": {
-    "react": "16.2.0",
+    "react": "16.6.0",
     "react-dom": "16.2.0",
     "reason-react": "0.3.4",
     "reason-reroute": "0.0.4",
