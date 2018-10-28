@@ -1,3 +1,7 @@
+# Warning
+
+This package is now deprecated. Please do not use this in production.
+
 # Summary
 
 [![Build Status](https://travis-ci.org/kMeillet/reason-loadable.svg?branch=master)](https://travis-ci.org/kMeillet/reason-loadable)
