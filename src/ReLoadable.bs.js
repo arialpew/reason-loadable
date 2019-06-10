@@ -5,13 +5,13 @@ var Curry = require("bs-platform/lib/js/curry.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 var DynamicImport = require("bs-dynamic-import/src/DynamicImport.bs.js");
 
-function WithRender() {
+function WithRender(Config) {
   var component = ReasonReact.reducerComponent("Loadable.WithRender");
-  var make = function (fetch, $staropt$star, $staropt$star$1, $staropt$star$2, render, _) {
-    var onFail = $staropt$star !== undefined ? $staropt$star : (function () {
+  var make = function ($$fetch, $staropt$star, $staropt$star$1, $staropt$star$2, render, _children) {
+    var onFail = $staropt$star !== undefined ? $staropt$star : (function (_error) {
           return null;
         });
-    var onLoading = $staropt$star$1 !== undefined ? $staropt$star$1 : (function () {
+    var onLoading = $staropt$star$1 !== undefined ? $staropt$star$1 : (function (param) {
           return null;
         });
     var delay = $staropt$star$2 !== undefined ? $staropt$star$2 : 200;
@@ -21,15 +21,15 @@ function WithRender() {
             /* handedOffState */component[/* handedOffState */2],
             /* willReceiveProps */component[/* willReceiveProps */3],
             /* didMount */(function (self) {
-                var timeoutId = setTimeout((function () {
-                        DynamicImport.$less$$bang$great(DynamicImport.$less$$great(DynamicImport.resolve(Curry._1(fetch, /* () */0)), (function (data) {
+                var timeoutId = setTimeout((function (param) {
+                        DynamicImport.$less$$bang$great(DynamicImport.$less$$great(DynamicImport.resolve(Curry._1($$fetch, /* () */0)), (function (data) {
                                     return Curry._1(self[/* send */3], /* Loaded */Block.__(1, [data]));
                                   })), (function (err) {
                                 return Curry._1(self[/* send */3], /* Failed */Block.__(0, [String(err)]));
                               }));
                         return /* () */0;
                       }), delay);
-                return Curry._1(self[/* onUnmount */4], (function () {
+                return Curry._1(self[/* onUnmount */4], (function (param) {
                               clearTimeout(timeoutId);
                               return /* () */0;
                             }));
@@ -48,11 +48,11 @@ function WithRender() {
                   return Curry._1(onFail, state[0]);
                 }
               }),
-            /* initialState */(function () {
+            /* initialState */(function (param) {
                 return /* Loading */0;
               }),
             /* retainedProps */component[/* retainedProps */11],
-            /* reducer */(function (action, _) {
+            /* reducer */(function (action, _state) {
                 if (typeof action === "number") {
                   return /* Update */Block.__(0, [/* Loading */0]);
                 } else if (action.tag) {
@@ -70,13 +70,13 @@ function WithRender() {
         ];
 }
 
-function WithChildren() {
+function WithChildren(Config) {
   var component = ReasonReact.reducerComponent("Loadable.WithChildren");
-  var make = function (fetch, $staropt$star, $staropt$star$1, $staropt$star$2, children) {
-    var onFail = $staropt$star !== undefined ? $staropt$star : (function () {
+  var make = function ($$fetch, $staropt$star, $staropt$star$1, $staropt$star$2, children) {
+    var onFail = $staropt$star !== undefined ? $staropt$star : (function (_error) {
           return null;
         });
-    var onLoading = $staropt$star$1 !== undefined ? $staropt$star$1 : (function () {
+    var onLoading = $staropt$star$1 !== undefined ? $staropt$star$1 : (function (param) {
           return null;
         });
     var delay = $staropt$star$2 !== undefined ? $staropt$star$2 : 200;
@@ -86,15 +86,15 @@ function WithChildren() {
             /* handedOffState */component[/* handedOffState */2],
             /* willReceiveProps */component[/* willReceiveProps */3],
             /* didMount */(function (self) {
-                var timeoutId = setTimeout((function () {
-                        DynamicImport.$less$$bang$great(DynamicImport.$less$$great(DynamicImport.resolve(Curry._1(fetch, /* () */0)), (function (data) {
+                var timeoutId = setTimeout((function (param) {
+                        DynamicImport.$less$$bang$great(DynamicImport.$less$$great(DynamicImport.resolve(Curry._1($$fetch, /* () */0)), (function (data) {
                                     return Curry._1(self[/* send */3], /* Loaded */Block.__(1, [data]));
                                   })), (function (err) {
                                 return Curry._1(self[/* send */3], /* Failed */Block.__(0, [String(err)]));
                               }));
                         return /* () */0;
                       }), delay);
-                return Curry._1(self[/* onUnmount */4], (function () {
+                return Curry._1(self[/* onUnmount */4], (function (param) {
                               clearTimeout(timeoutId);
                               return /* () */0;
                             }));
@@ -113,11 +113,11 @@ function WithChildren() {
                   return Curry._1(onFail, state[0]);
                 }
               }),
-            /* initialState */(function () {
+            /* initialState */(function (param) {
                 return /* Loading */0;
               }),
             /* retainedProps */component[/* retainedProps */11],
-            /* reducer */(function (action, _) {
+            /* reducer */(function (action, _state) {
                 if (typeof action === "number") {
                   return /* Update */Block.__(0, [/* Loading */0]);
                 } else if (action.tag) {

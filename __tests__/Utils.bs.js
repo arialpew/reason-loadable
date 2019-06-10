@@ -3,15 +3,15 @@
 var React = require("react");
 
 function timer(delay, xs) {
-  return new Promise((function (resolve, _) {
-                setTimeout((function () {
+  return new Promise((function (resolve, param) {
+                setTimeout((function (param) {
                         return resolve(xs);
                       }), delay);
                 return /* () */0;
               }));
 }
 
-function __STD_ONLOADING__() {
+function __STD_ONLOADING__(param) {
   return React.createElement("p", undefined, "Loading ...");
 }
 
@@ -21,15 +21,15 @@ function __STD_ONFAIL__(err) {
 
 var __CHILDLESS__ = /* array */[];
 
-function stdTimer() {
+function stdTimer(param) {
   return timer(200, /* () */0);
 }
 
-function heavyTimer() {
+function heavyTimer(param) {
   return timer(2500, /* () */0);
 }
 
-function timeoutTimer() {
+function timeoutTimer(param) {
   return timer(4500, /* () */0);
 }
 

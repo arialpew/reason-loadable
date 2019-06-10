@@ -16,7 +16,7 @@ function make(text, children) {
           /* willUnmount */component[/* willUnmount */6],
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
-          /* render */(function () {
+          /* render */(function (_self) {
               return Curry._1(children, text);
             }),
           /* initialState */component[/* initialState */10],

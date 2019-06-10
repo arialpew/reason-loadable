@@ -5,7 +5,7 @@ var ReasonReact = require("reason-react/src/ReasonReact.js");
 
 var component = ReasonReact.statelessComponent("WithPure");
 
-function make() {
+function make(_children) {
   return /* record */[
           /* debugName */component[/* debugName */0],
           /* reactClassInternal */component[/* reactClassInternal */1],
@@ -16,7 +16,7 @@ function make() {
           /* willUnmount */component[/* willUnmount */6],
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
-          /* render */(function () {
+          /* render */(function (_self) {
               return React.createElement("p", undefined, "Hello world");
             }),
           /* initialState */component[/* initialState */10],

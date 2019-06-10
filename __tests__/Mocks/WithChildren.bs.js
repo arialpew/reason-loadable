@@ -16,7 +16,7 @@ function make(children) {
           /* willUnmount */component[/* willUnmount */6],
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
-          /* render */(function () {
+          /* render */(function (_self) {
               return Caml_array.caml_array_get(children, 0);
             }),
           /* initialState */component[/* initialState */10],
