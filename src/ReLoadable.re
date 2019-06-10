@@ -27,44 +27,42 @@ module WithRender = (Config: Configuration) => {
   let make =
       (
         ~fetch,
-        ~onFail=_error => ReasonReact.nullElement,
-        ~onLoading=() => ReasonReact.nullElement,
+        ~onFail=_error => ReasonReact.null,
+        ~onLoading=() => ReasonReact.null,
         ~delay=200,
         ~render: renderProp,
-        _children: childless
+        _children: childless,
       ) => {
     ...component,
     initialState: () => Loading,
     reducer: (action, _state) =>
-      switch action {
+      switch (action) {
       | Loading => ReasonReact.Update(Loading)
       | Failed(err) => ReasonReact.Update(Failed(err))
       | Loaded(component) => ReasonReact.Update(Loaded(component))
       },
-    subscriptions: self => [
-      Sub(
-        () =>
-          Js.Global.setTimeout(
-            () =>
-              fetch()
-              /* Resolve module (unwrap). */
-              |> resolve
-              /* Resolve new state, user should refine module himself with correct type on render. */
-              <$> (data => self.send(Loaded(data)))
-              /* Forward error if some trouble happen. */
-              <$!> (err => self.send(Failed(err |> Js.String.make)))
-              |> ignore,
-            delay
-          ),
-        Js.Global.clearTimeout
-      )
-    ],
+    didMount: self => {
+      let timeoutId =
+        Js.Global.setTimeout(
+          () =>
+            fetch()
+            /* Resolve module (unwrap). */
+            |> resolve
+            /* Resolve new state, user should refine module himself with correct type on render. */
+            <$> (data => self.send(Loaded(data)))
+            /* Forward error if some trouble happen. */
+            <$!> (err => self.send(Failed(err |> Js.String.make)))
+            |> ignore,
+          delay,
+        );
+      self.onUnmount(() => Js.Global.clearTimeout(timeoutId));
+    },
     render: ({state}) =>
-      switch state {
+      switch (state) {
       | Loading => onLoading()
       | Failed(err) => onFail(err)
       | Loaded(component) => render(component)
-      }
+      },
   };
 };
 
@@ -90,42 +88,40 @@ module WithChildren = (Config: Configuration) => {
   let make =
       (
         ~fetch,
-        ~onFail=_error => ReasonReact.nullElement,
-        ~onLoading=() => ReasonReact.nullElement,
+        ~onFail=_error => ReasonReact.null,
+        ~onLoading=() => ReasonReact.null,
         ~delay=200,
-        children: renderChild
+        children: renderChild,
       ) => {
     ...component,
     initialState: () => Loading,
     reducer: (action, _state) =>
-      switch action {
+      switch (action) {
       | Loading => ReasonReact.Update(Loading)
       | Failed(err) => ReasonReact.Update(Failed(err))
       | Loaded(component) => ReasonReact.Update(Loaded(component))
       },
-    subscriptions: self => [
-      Sub(
-        () =>
-          Js.Global.setTimeout(
-            () =>
-              fetch()
-              /* Resolve module (unwrap). */
-              |> resolve
-              /* Resolve new state, user should refine module himself with correct type on render. */
-              <$> (data => self.send(Loaded(data)))
-              /* Forward error if some trouble happen. */
-              <$!> (err => self.send(Failed(err |> Js.String.make)))
-              |> ignore,
-            delay
-          ),
-        Js.Global.clearTimeout
-      )
-    ],
+    didMount: self => {
+      let timeoutId =
+        Js.Global.setTimeout(
+          () =>
+            fetch()
+            /* Resolve module (unwrap). */
+            |> resolve
+            /* Resolve new state, user should refine module himself with correct type on render. */
+            <$> (data => self.send(Loaded(data)))
+            /* Forward error if some trouble happen. */
+            <$!> (err => self.send(Failed(err |> Js.String.make)))
+            |> ignore,
+          delay,
+        );
+      self.onUnmount(() => Js.Global.clearTimeout(timeoutId));
+    },
     render: ({state}) =>
-      switch state {
+      switch (state) {
       | Loading => onLoading()
       | Failed(err) => onFail(err)
       | Loaded(component) => children(component)
-      }
+      },
   };
 };

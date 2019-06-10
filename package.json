@@ -17,15 +17,15 @@
     "@glennsl/bs-jest": "0.4.2",
     "babel-core": "6.26.0",
     "babel-preset-react-app": "3.1.1",
-    "bs-platform": "2.2.3",
+    "bs-platform": "^4.0.3",
     "bs-react-test-renderer": "2.0.0",
     "jest": "22.4.2"
   },
   "dependencies": {
+    "bs-dynamic-import": "0.3.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
-    "reason-react": "0.3.4",
-    "bs-dynamic-import": "0.3.0"
+    "reason-react": "^0.5.3"
   },
   "jest": {
     "transformIgnorePatterns": [],
