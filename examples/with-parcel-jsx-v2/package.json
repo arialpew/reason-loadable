@@ -19,7 +19,7 @@
     "bs-dynamic-import": "^0.4.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "reason-loadable": "^0.5.0",
+    "reason-loadable": "^0.6.0",
     "reason-react": "^0.7.0"
   },
   "browserslist": [
