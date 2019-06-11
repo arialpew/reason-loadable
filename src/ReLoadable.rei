@@ -1,5 +1,8 @@
 type nothing;
 
+[@bs.module "react"]
+external lazy_: (unit => Js.Promise.t(DynamicImport.importable('a))) => 'a = "lazy";
+
 module type Configuration = {module type t;};
 
 module WithRender:
