@@ -1,13 +1,13 @@
 # with-parcel
 
 ```
-dist/src.b0000f59.js.map        402.04 KB     134ms
-dist/src.b0000f59.js            153.08 KB    21.35s
-dist/Faq.bs.1cce57b9.js.map       1.92 KB       6ms
-dist/Faq.bs.1cce57b9.js           1.55 KB     5.17s
-dist/src.261e070e.css.map           904 B      40ms
-dist/src.261e070e.css               372 B    12.85s
-dist/index.html                     336 B     4.00s
-dist/Faq.bs.84bb07bb.css.map        171 B      47ms
-dist/Faq.bs.84bb07bb.css             64 B     4.31s
+dist/src.8ca43727.js.map        326.27 KB     98ms
+dist/src.8ca43727.js            143.55 KB    3.65s
+dist/Faq.bs.afe2ae27.js           1.77 KB    533ms
+dist/Faq.bs.afe2ae27.js.map       1.06 KB      7ms
+dist/src.261e070e.css.map           904 B     18ms
+dist/src.261e070e.css               372 B     73ms
+dist/index.html                     336 B     24ms
+dist/Faq.bs.84bb07bb.css.map        171 B     16ms
+dist/Faq.bs.84bb07bb.css             64 B    459ms
 ```
