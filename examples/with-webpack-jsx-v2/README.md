@@ -1,4 +1,4 @@
-# with-webpack
+# with-webpack-jsx-v2
 
 ```
            Asset       Size  Chunks             Chunk Names

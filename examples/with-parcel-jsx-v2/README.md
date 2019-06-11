@@ -1,4 +1,4 @@
-# with-parcel
+# with-parcel-jsx-v2
 
 ```
 dist/src.b0000f59.js.map        402.04 KB     134ms
