@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h1 {
+  padding: 20px;
+}
+
+a {
+  border: 1px solid red;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;  
+  text-align: center;
+  font-size: 22px;
+  margin: 20px;
+  -ms-flex: 1;
+      flex: 1;
+  cursor: hand;
+}
+
+.layout {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  height: 100%;
+}
+
+.nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  height: 10%;
+}
+
+.view {
+   display: -ms-flexbox;
+   display: flex;
+   -ms-flex-pack: center;
+       justify-content: center;
+   -ms-flex-align: center;
+       align-items: center;
+   height: 90%;   
+}
+

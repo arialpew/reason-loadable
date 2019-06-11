@@ -1,15 +1,13 @@
 # with-parcel
 
-This is an example with Parcel.
-
-- Pro : zero-configuration. 
- 
-- Cons : doesn't provide tree shaking for the moment so the bundle size is larger than Webpack. 
-
 ```
-dist/08080fd6f4f610f65a41a36d5f96afd7.js     183.24 KB
-dist/2167879673ca8c71c8ed4b10895bd4de.js       1.26 KB
-dist/index.html                                  385 B
-dist/08080fd6f4f610f65a41a36d5f96afd7.css        326 B
-dist/2167879673ca8c71c8ed4b10895bd4de.css         15 B
+dist/src.b0000f59.js.map        402.04 KB     134ms
+dist/src.b0000f59.js            153.08 KB    21.35s
+dist/Faq.bs.1cce57b9.js.map       1.92 KB       6ms
+dist/Faq.bs.1cce57b9.js           1.55 KB     5.17s
+dist/src.261e070e.css.map           904 B      40ms
+dist/src.261e070e.css               372 B    12.85s
+dist/index.html                     336 B     4.00s
+dist/Faq.bs.84bb07bb.css.map        171 B      47ms
+dist/Faq.bs.84bb07bb.css             64 B     4.31s
 ```

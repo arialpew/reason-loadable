@@ -8,11 +8,11 @@ var Config = /* module */[];
 
 var Loadable = ReLoadable.WithRender(Config);
 
-function make() {
-  return Curry._6(Loadable[/* make */1], (function () {
+function make(_children) {
+  return Curry._6(Loadable[/* make */1], (function (param) {
                 return import("./Faq");
-              }), /* None */0, /* None */0, /* None */0, (function (LoadedComponent) {
-                return ReasonReact.element(/* None */0, /* None */0, Curry._1(LoadedComponent[/* make */1], /* array */[]));
+              }), undefined, undefined, undefined, (function (LoadedComponent) {
+                return ReasonReact.element(undefined, undefined, Curry._1(LoadedComponent[/* make */1], /* array */[]));
               }), /* array */[]);
 }
 

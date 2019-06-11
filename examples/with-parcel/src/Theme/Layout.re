@@ -6,10 +6,10 @@ let make = children => {
     <div className="layout">
       <div className="nav">
         <Routes.Link route=Home>
-          (ReasonReact.stringToElement("Home"))
+          (ReasonReact.string("Home"))
         </Routes.Link>
         <Routes.Link route=Faq>
-          (ReasonReact.stringToElement("FAQ"))
+          (ReasonReact.string("FAQ"))
         </Routes.Link>
       </div>
       <div className="view"> children[0] </div>

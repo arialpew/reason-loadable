@@ -6,7 +6,7 @@ import * as App$WithParcel from "./App.bs.js";
 
 require("./index.css");
 
-ReactDOMRe.renderToElementWithId(ReasonReact.element(/* None */0, /* None */0, App$WithParcel.make(/* array */[])), "root");
+ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, App$WithParcel.make(/* array */[])), "root");
 
 export {
   

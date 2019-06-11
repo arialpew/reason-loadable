@@ -10,22 +10,35 @@ import * as NotFound$WithParcel from "./Theme/NotFound.bs.js";
 
 var component = ReasonReact.statelessComponent("App");
 
-function make() {
-  var newrecord = component.slice();
-  newrecord[/* render */9] = (function () {
-      return ReasonReact.element(/* None */0, /* None */0, Layout$WithParcel.make(/* array */[ReasonReact.element(/* None */0, /* None */0, Curry._1(Routes$WithParcel.Container[/* make */1], (function (currentRoute) {
-                                  switch (currentRoute) {
-                                    case 0 : 
-                                        return ReasonReact.element(/* None */0, /* None */0, NotFound$WithParcel.make(/* array */[]));
-                                    case 1 : 
-                                        return ReasonReact.element(/* None */0, /* None */0, Home$WithParcel.make(/* array */[]));
-                                    case 2 : 
-                                        return ReasonReact.element(/* None */0, /* None */0, LazyFaq$WithParcel.make(/* array */[]));
-                                    
-                                  }
-                                })))]));
-    });
-  return newrecord;
+function make(_children) {
+  return /* record */[
+          /* debugName */component[/* debugName */0],
+          /* reactClassInternal */component[/* reactClassInternal */1],
+          /* handedOffState */component[/* handedOffState */2],
+          /* willReceiveProps */component[/* willReceiveProps */3],
+          /* didMount */component[/* didMount */4],
+          /* didUpdate */component[/* didUpdate */5],
+          /* willUnmount */component[/* willUnmount */6],
+          /* willUpdate */component[/* willUpdate */7],
+          /* shouldUpdate */component[/* shouldUpdate */8],
+          /* render */(function (_self) {
+              return ReasonReact.element(undefined, undefined, Layout$WithParcel.make(/* array */[ReasonReact.element(undefined, undefined, Curry._1(Routes$WithParcel.Container[/* make */1], (function (currentRoute) {
+                                          switch (currentRoute) {
+                                            case 0 : 
+                                                return ReasonReact.element(undefined, undefined, NotFound$WithParcel.make(/* array */[]));
+                                            case 1 : 
+                                                return ReasonReact.element(undefined, undefined, Home$WithParcel.make(/* array */[]));
+                                            case 2 : 
+                                                return ReasonReact.element(undefined, undefined, LazyFaq$WithParcel.make(/* array */[]));
+                                            
+                                          }
+                                        })))]));
+            }),
+          /* initialState */component[/* initialState */10],
+          /* retainedProps */component[/* retainedProps */11],
+          /* reducer */component[/* reducer */12],
+          /* jsElementWrapped */component[/* jsElementWrapped */13]
+        ];
 }
 
 export {

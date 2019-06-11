@@ -1,7 +1,7 @@
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const WebpackManifestPlugin = require("webpack-manifest-plugin");
 const WebpackNullPlugin = require("webpack-null-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
@@ -9,22 +9,22 @@ const isDev = () => process.env.NODE_ENV === "development";
 const isProd = () => process.env.NODE_ENV === "production";
 const only = (predicate, plugin) => (predicate() ? plugin() : new WebpackNullPlugin());
 
-const css = minimize => [
+const css = () => [
   {
     loader: "css-loader",
-    options: { importLoaders: 1, minimize },
+    options: { importLoaders: 1 },
   },
   "postcss-loader",
 ];
 
 const cssDev = () => [
   "style-loader",  
-  ...css(false),
+  ...css(),
 ];
 
 const cssProd = () => [
   MiniCssExtractPlugin.loader,
-  ...css(true),
+  ...css(),
 ];
 
 module.exports = {
@@ -73,7 +73,7 @@ module.exports = {
       chunkFilename: isDev() ? "[id].css" : "[id].[chunkhash:8].css",
     }),
     only(isProd, () => new WebpackManifestPlugin()),
-    only(isProd, () => new CleanWebpackPlugin(["dist"])),
+    only(isProd, () => new CleanWebpackPlugin()),
     // only(isProd, () => new BundleAnalyzerPlugin()),
   ],
 };

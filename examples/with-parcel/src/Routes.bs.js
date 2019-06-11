@@ -1,6 +1,6 @@
 
 
-import * as ReRoute from "reason-reroute/src/ReRoute.js";
+import * as ReRoute$WithParcel from "./ReRoute.bs.js";
 
 function routeFromUrl(url) {
   var match = url[/* path */0];
@@ -32,7 +32,7 @@ var Config = /* module */[
   /* routeToUrl */routeToUrl
 ];
 
-var include = ReRoute.CreateRouter(Config);
+var include = ReRoute$WithParcel.CreateRouter(Config);
 
 var Container = include[0];
 

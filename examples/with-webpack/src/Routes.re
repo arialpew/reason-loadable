@@ -5,7 +5,7 @@ module Config = {
     | Home
     | Faq;
   /* URL -> Route. */
-  let routeFromUrl = (url: ReasonReact.Router.url) =>
+  let routeFromUrl = (url: ReasonReactRouter.url) =>
     switch url.path {
     | ["faq"] => Faq
     | [] => Home

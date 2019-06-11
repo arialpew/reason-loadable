@@ -6,7 +6,7 @@ module Loadable = ReLoadable.WithRender(Config);
 
 let make = _children =>
   Loadable.make(
-    ~fetch=() => DynamicImport.import("./Faq"),
+    ~fetch=() => DynamicImport.import("./Faq.bs.js"),
     ~render=((module LoadedComponent)) => <LoadedComponent />,
     [||]
   );
