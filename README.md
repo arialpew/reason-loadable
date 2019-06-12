@@ -51,7 +51,7 @@ Some of the most common problematic patterns that were covered include :
 
 JSX v3 API support [hook component](https://reasonml.github.io/reason-react/docs/en/components).
 
-## Example
+## Examples
 
 1) Create a [ReasonReact](https://github.com/reasonml/reason-react) hook component.
 
@@ -106,7 +106,7 @@ let make = () => {
 
 JSX v2 API support [record component](https://reasonml.github.io/reason-react/docs/en/jsx-2).
 
-## Example
+## Examples
 
 1) Create a [ReasonReact](https://github.com/reasonml/reason-react) record component.
 
