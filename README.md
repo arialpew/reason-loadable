@@ -13,6 +13,7 @@
 * [JSX v2](#jsx-v2)
   * [Examples](#examples)
 * [API](#api)
+* [Special thanks to](#special-thanks-to)
 
 # Installation
 
@@ -298,3 +299,11 @@ You have to provide fetch and render/children function, rest are optionnal.
 ##### `onLoading: string => ReasonReact.reactElement (optionnal, by default use ReasonReact.nullElement)`
 
 ##### `delay: int (optionnal, by default use 200ms)`
+
+# Special thanks to
+
+@jchavarri
+@rickyvetter
+@bloodyowl
+@cristianoc
+@thangngoc89
