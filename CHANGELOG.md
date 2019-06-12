@@ -1,4 +1,4 @@
-# 0.6.0
+# 0.6.1
 
 - Support JSX v3 (hook component), with React Suspense/Lazy.
 - Add JSX v3 examples (Parcel/Webpack).
