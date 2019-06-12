@@ -10,9 +10,9 @@ let __HEAVY_DELAY__ = 2500;
 
 let __TIMEOUT_DELAY__ = 4500;
 
-let __STD_ONLOADING__ = () => <p> (ReasonReact.string("Loading ...")) </p>;
+let __STD_ONLOADING__ = () => <p> {ReasonReact.string("Loading ...")} </p>;
 
-let __STD_ONFAIL__ = err => <p> (ReasonReact.string(err)) </p>;
+let __STD_ONFAIL__ = err => <p> {ReasonReact.string(err)} </p>;
 
 let __CHILDLESS__ = [||];
 

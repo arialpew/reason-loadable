@@ -1,7 +1,8 @@
 open DynamicImport;
 
 [@bs.module "react"]
-external lazy_: (unit => Js.Promise.t(DynamicImport.importable('a))) => 'a = "lazy";
+external lazy_: (unit => Js.Promise.t(DynamicImport.importable('a))) => 'a =
+  "lazy";
 
 type nothing;
 

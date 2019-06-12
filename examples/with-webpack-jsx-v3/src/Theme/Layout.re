@@ -11,16 +11,11 @@ let goFaq = event => {
 };
 
 [@react.component]
-let make = (~children) => {
+let make = (~children) =>
   <div className="layout">
     <div className="nav">
-      <a onClick={goHome}>
-        (ReasonReact.string("Home"))
-      </a>
-      <a onClick={goFaq}>
-        (ReasonReact.string("FAQ"))
-      </a>
+      <a onClick=goHome> {ReasonReact.string("Home")} </a>
+      <a onClick=goFaq> {ReasonReact.string("FAQ")} </a>
     </div>
     <div className="view"> children </div>
   </div>;
-};

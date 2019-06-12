@@ -27,7 +27,7 @@ module Pure = {
         ~onLoading=__STD_ONLOADING__,
         ~onFail=__STD_ONFAIL__,
         ~delay=__STD_DELAY__,
-        __CHILDLESS__
+        __CHILDLESS__,
       );
   };
   module WithChildren = {
@@ -38,7 +38,7 @@ module Pure = {
         ~onLoading=__STD_ONLOADING__,
         ~onFail=__STD_ONFAIL__,
         ~delay=__STD_DELAY__,
-        children
+        children,
       );
   };
 };
@@ -53,7 +53,7 @@ module Bad = {
         ~onLoading=__STD_ONLOADING__,
         ~onFail=__STD_ONFAIL__,
         ~delay=__STD_DELAY__,
-        __CHILDLESS__
+        __CHILDLESS__,
       );
   };
   module WithChildren = {
@@ -64,7 +64,7 @@ module Bad = {
         ~onLoading=__STD_ONLOADING__,
         ~onFail=__STD_ONFAIL__,
         ~delay=__STD_DELAY__,
-        children
+        children,
       );
   };
 };
@@ -79,7 +79,7 @@ module Props = {
         ~onLoading=__STD_ONLOADING__,
         ~onFail=__STD_ONFAIL__,
         ~delay=__STD_DELAY__,
-        __CHILDLESS__
+        __CHILDLESS__,
       );
   };
   module WithChildren = {
@@ -90,7 +90,7 @@ module Props = {
         ~onLoading=__STD_ONLOADING__,
         ~onFail=__STD_ONFAIL__,
         ~delay=__STD_DELAY__,
-        children
+        children,
       );
   };
 };
@@ -105,7 +105,7 @@ module Children = {
         ~onLoading=__STD_ONLOADING__,
         ~onFail=__STD_ONFAIL__,
         ~delay=__STD_DELAY__,
-        __CHILDLESS__
+        __CHILDLESS__,
       );
   };
   module WithChildren = {
@@ -116,7 +116,7 @@ module Children = {
         ~onLoading=__STD_ONLOADING__,
         ~onFail=__STD_ONFAIL__,
         ~delay=__STD_DELAY__,
-        children
+        children,
       );
   };
 };
@@ -131,7 +131,7 @@ module ChildrenFunc = {
         ~onLoading=__STD_ONLOADING__,
         ~onFail=__STD_ONFAIL__,
         ~delay=__STD_DELAY__,
-        __CHILDLESS__
+        __CHILDLESS__,
       );
   };
   module WithChildren = {
@@ -142,7 +142,7 @@ module ChildrenFunc = {
         ~onLoading=__STD_ONLOADING__,
         ~onFail=__STD_ONFAIL__,
         ~delay=__STD_DELAY__,
-        children
+        children,
       );
   };
 };

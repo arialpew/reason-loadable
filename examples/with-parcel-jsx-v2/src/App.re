@@ -5,14 +5,14 @@ let make = _children => {
   render: _self =>
     <Layout>
       <Routes.Container>
-        ...(
+        ...{
              (~currentRoute) =>
-               switch currentRoute {
+               switch (currentRoute) {
                | Home => <Home />
                | Faq => <LazyFaq />
                | _ => <NotFound />
                }
-           )
+           }
       </Routes.Container>
-    </Layout>
+    </Layout>,
 };

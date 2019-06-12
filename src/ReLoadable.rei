@@ -1,13 +1,14 @@
 type nothing;
 
 [@bs.module "react"]
-external lazy_: (unit => Js.Promise.t(DynamicImport.importable('a))) => 'a = "lazy";
+external lazy_: (unit => Js.Promise.t(DynamicImport.importable('a))) => 'a =
+  "lazy";
 
 module type Configuration = {module type t;};
 
 module WithRender:
   (Config: Configuration) =>
-  {
+   {
     type childless = array(nothing);
     type renderProp = (module Config.t) => ReasonReact.reactElement;
     type state =
@@ -20,12 +21,12 @@ module WithRender:
         ReasonReact.stateless,
         ReasonReact.noRetainedProps,
         ReasonReact.noRetainedProps,
-        state
+        state,
       );
     let make:
       (
         ~fetch: unit =>
-                Js.Promise.t(DynamicImport.importable((module Config.t))),
+                Js.Promise.t(DynamicImport.importable(module Config.t)),
         ~onFail: string => ReasonReact.reactElement=?,
         ~onLoading: unit => ReasonReact.reactElement=?,
         ~delay: int=?,
@@ -37,13 +38,13 @@ module WithRender:
         state,
         ReasonReact.noRetainedProps,
         ReasonReact.noRetainedProps,
-        state
+        state,
       );
   };
 
 module WithChildren:
   (Config: Configuration) =>
-  {
+   {
     type renderChild = (module Config.t) => ReasonReact.reactElement;
     type state =
       | Loading
@@ -55,12 +56,12 @@ module WithChildren:
         ReasonReact.stateless,
         ReasonReact.noRetainedProps,
         ReasonReact.noRetainedProps,
-        state
+        state,
       );
     let make:
       (
         ~fetch: unit =>
-                Js.Promise.t(DynamicImport.importable((module Config.t))),
+                Js.Promise.t(DynamicImport.importable(module Config.t)),
         ~onFail: string => ReasonReact.reactElement=?,
         ~onLoading: unit => ReasonReact.reactElement=?,
         ~delay: int=?,
@@ -71,6 +72,6 @@ module WithChildren:
         state,
         ReasonReact.noRetainedProps,
         ReasonReact.noRetainedProps,
-        state
+        state,
       );
   };

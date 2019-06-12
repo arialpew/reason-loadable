@@ -6,14 +6,14 @@ module Config = {
     | Faq;
   /* URL -> Route. */
   let routeFromUrl = (url: ReasonReactRouter.url) =>
-    switch url.path {
+    switch (url.path) {
     | ["faq"] => Faq
     | [] => Home
     | _ => NotFound
     };
   /* Route -> URL. */
   let routeToUrl = (route: route) =>
-    switch route {
+    switch (route) {
     | Faq => "/faq"
     | Home => "/"
     | NotFound => ""

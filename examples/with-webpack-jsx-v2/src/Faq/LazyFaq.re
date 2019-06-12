@@ -8,5 +8,5 @@ let make = _children =>
   Loadable.make(
     ~fetch=() => DynamicImport.import("./Faq"),
     ~render=((module LoadedComponent)) => <LoadedComponent />,
-    [||]
+    [||],
   );

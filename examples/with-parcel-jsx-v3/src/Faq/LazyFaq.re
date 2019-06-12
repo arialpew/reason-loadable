@@ -1,9 +1,9 @@
 module type T = (module type of Faq);
 
 /*
-  Needed for BuckleScript to not import the original component :
-  See https://github.com/BuckleScript/bucklescript/issues/3543
-*/
+   Needed for BuckleScript to not import the original component :
+   See https://github.com/BuckleScript/bucklescript/issues/3543
+ */
 [@bs.val] external component: (module T) = "undefined";
 
 /* Module annotation needed to make sure `make` has the same type as the original component. */
