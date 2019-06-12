@@ -6,14 +6,13 @@
 🔥 A higher order module for loading dynamic components with [ReasonReact](https://github.com/reasonml/reason-react).
 
 * [Installation](#installation)
-* [Motivation](#motivation)
-  * [Common problems](#common-problems)
-  * [Support](#support)
-* [Example](#example)
-  * [Basic example](#basic-example)
+* [Common problems solved](#common-problems-solved)
+* [Support](#support)
+* [JSX v3](#jsx-v2)
+  * [Examples](#examples)
+* [JSX v2](#jsx-v2)
+  * [Examples](#examples)
 * [API](#api)
-  * [ReLoadable](#reloadable)
-  * [Options](#options)
 
 # Installation
 
@@ -34,32 +33,82 @@ You can now use **"ReLoadable"** & **"DynamicImport"** module.
 
 About **"DynamicImport"**, you can take a look at the [documentation](https://github.com/kMeillet/bs-dynamic-import) for more information.
 
-# Motivation
-
-This project is strongly inspired from ["react-loadable"](https://github.com/jamiebuilds/react-loadable), the goal is ultimately to achieve the same functionality in pure Reason.
-
-## Common problems
+# Common problems solved
 
 Some of the most common problematic patterns that were covered include :
 
 * **Import [ReasonReact](https://github.com/reasonml/reason-react) component dynamically**. ✔️
-* **Support function as children / render prop**. ✔️
-* **Minimal SSR support**. ✔️
-* **Import multiple component dynamically in parallel**. ❌
-* **Full SSR support (preloadAll, preload, preloadReady)**. ❌
-* **Retry**. ❌
+* **Support JSX v3 (hook component) : Suspense/Lazy**. ✔️
+* **Support JSX v2 (record component) : function as children / render prop**. ✔️
 
-## Support
+# Support
 
 - Server-side (Node.js) : Node.js doesn't support dynamic import, you should use [Babel](https://babeljs.io/) with ["babel-plugin-dynamic-import-node"](https://github.com/airbnb/babel-plugin-dynamic-import-node). [#example](https://github.com/kMeillet/bs-dynamic-import)
 
-- Client-side (web) : you should use a bundler ([Webpack 4](https://webpack.js.org/) and [Parcel](https://github.com/parcel-bundler/parcel) support dynamic import with zero-configuration, Rollup require experimental flag). [#example](https://github.com/kMeillet/reason-loadable/tree/master/examples)
+- Client-side (web) : you should use a bundler ([Webpack](https://webpack.js.org/) and [Parcel](https://github.com/parcel-bundler/parcel) support dynamic import with zero-configuration). [#example](https://github.com/kMeillet/reason-loadable/tree/master/examples)
 
-# Example
+# JSX v3
 
-## Basic example
+JSX v3 API support [hook component](https://reasonml.github.io/reason-react/docs/en/components).
 
-1) Create a [ReasonReact](https://github.com/reasonml/reason-react) component.
+## Example
+
+1) Create a [ReasonReact](https://github.com/reasonml/reason-react) hook component.
+
+```reason
+/* HelloWorld.re */
+[@react.component]
+let make = (~name) => <h1> (ReasonReact.string("Hello world " ++ name)) </h1>;
+
+/* Export default. */
+let default = make;
+```
+
+2) Create type-safe dynamic component, use **"ReLoadable.lazy_"** and **"DynamicImport.import"**.
+
+```reason
+/* LazyHelloWorld.re */
+module type T = (module type of HelloWorld);
+
+/*
+  Needed for BuckleScript to not import the original component :
+  See https://github.com/BuckleScript/bucklescript/issues/3543
+*/
+[@bs.val] external component: (module T) = "undefined";
+
+/* Module annotation needed to make sure `make` has the same type as the original component. */
+module Lazy: T = {
+  /* Includes `makeProps` at the type level without adding `import` of the original component. */
+  include (val component);
+  /* 100% unsafe due to `import` typedef :) but will be unified by the explicit type annotation above. */
+  let make = ReLoadable.lazy_(() => DynamicImport.import("./HelloWord.bs.js"));
+  /* All bindings in the original component have to be added here (`makeProps` is external, so no need). */
+  /* Shallowing them here removes invalid access to undefined[1], undefined[n] in the resulting output. */
+  let default = make;
+};
+```
+
+3) Render dynamic component anywhere in your code, use **"React.Suspense"**.
+
+```reason
+/* App.re */
+[@react.component]
+let make = () => {
+  <React.Suspense fallback={<div> (ReasonReact.string("Loading ...")) </div>}>
+    <LazyHelloWorld.Lazy name="Zeus" />
+  </React.Suspense>;
+};
+```
+
+[More example are available in repository.](https://github.com/kMeillet/reason-loadable/tree/master/examples)
+
+# JSX v2
+
+JSX v2 API support [record component](https://reasonml.github.io/reason-react/docs/en/jsx-2).
+
+## Example
+
+1) Create a [ReasonReact](https://github.com/reasonml/reason-react) record component.
 
 ```reason
 /* HelloWorld.re */
@@ -68,11 +117,11 @@ let component = ReasonReact.statelessComponent("HelloWorld");
 let make = (~name, _children) => {
   ...component,
   render: _self =>
-    <h1> (ReasonReact.stringToElement("Hello world " ++ name)) </h1>
+    <h1> (ReasonReact.string("Hello world " ++ name)) </h1>
 };
 ```
 
-2) Create type-safe dynamic component with **"ReLoadable"** module.
+2) Create type-safe dynamic component, use **"ReLoadable.WithRender"** (or **"ReLoadable.WithChildren"**, see API above).
 
 ```reason
 /* LazyHelloWorld.re */
@@ -84,7 +133,7 @@ module Config = {
 include ReLoadable.WithRender(Config);
 ```
 
-3) Render dynamic component anywhere in your code like any component, fetch with **"DynamicImport"** module & render.
+3) Render dynamic component anywhere in your code, use **"DynamicImport.import"**.
 
 ```reason
 /* App.re */
@@ -115,8 +164,8 @@ let make = _children => {
       <LazyHelloWorld
         fetch=(() => DynamicImport.import("./HelloWorld.bs.js"))
         render=(((module HelloWorld)) => <HelloWorld name="Zeus" />)
-        onLoading=(() => <p>(ReasonReact.stringToElement("Loading ..."))</p>)
-        onFail=((_error) => <p>(ReasonReact.stringToElement("Oops, something goes wrong !"))</p>)
+        onLoading=(() => <p>(ReasonReact.string("Loading ..."))</p>)
+        onFail=((_error) => <p>(ReasonReact.string("Oops, something goes wrong !"))</p>)
         delay=3000
       />
     </div>
@@ -138,8 +187,8 @@ let make = (~name, _children) =>
   Loadable.make(
     ~fetch=() => DynamicImport.import("./HelloWorld.bs.js"),
     ~render=((module HelloWorld)) => <HelloWorld name />,
-    ~onLoading=() => <p>(ReasonReact.stringToElement("Loading ..."))</p>,
-    ~onFail=_error => <p>(ReasonReact.stringToElement("Oops, something goes wrong !"))</p>,
+    ~onLoading=() => <p>(ReasonReact.string("Loading ..."))</p>,
+    ~onFail=_error => <p>(ReasonReact.string("Oops, something goes wrong !"))</p>,
     ~delay=3000,
     [||]
   );
@@ -172,8 +221,8 @@ module Loadable = ReLoadable.WithRender(Config);
 let make = _children =>
   Loadable.make(
     ~fetch=() => DynamicImport.import("./HelloWorld.bs.js"),
-    ~onLoading=() => <p>(ReasonReact.stringToElement("Loading ..."))</p>,
-    ~onFail=_error => <p>(ReasonReact.stringToElement("Oops, something goes wrong !"))</p>,
+    ~onLoading=() => <p>(ReasonReact.string("Loading ..."))</p>,
+    ~onFail=_error => <p>(ReasonReact.string("Oops, something goes wrong !"))</p>,
     ~delay=3000,
     [||]
   );
@@ -194,7 +243,7 @@ let make = _children => {
 };
 ```
 
-🖌️ Look much better !
+🖌️ Look much better. We recommend [JSX v3 API](#jsx-v3) for new project (hook component), give it a try.
 
 **Note :** **"ReLoadable.WithRender"** return a childless LoadableComponent, that mean you literally can't use children ([||]) but have to use "render prop". If you are in favor of "function as children", use **"ReLoadable.WithChildren"**.
 
@@ -202,35 +251,47 @@ let make = _children => {
 
 # API
 
-## ReLoadable
+#### `DynamicImport.import: string => Js.Promise.t(DynamicImport.importable('a))`
 
-#### `Configuration: { module type t; }`
+Import dynamic module ("bs.js" compiled file).
+
+#### `ReLoadable.lazy_: (unit => Js.Promise.t(DynamicImport.importable('a))) => 'a`
+
+React.lazy binding.
+
+**Note :** JSX v3 API
+
+#### `ReLoadable.Configuration: { module type t; }`
 
 Configuration store importable module type.
 
-#### `ReLoadable.WithRender: Configuration => LoadableComponent`
+**Note :** JSX v2 API
+
+#### `ReLoadable.WithRender: ReLoadable.Configuration => LoadableComponent`
 
 Take Configuration and create LoadableComponent who use "render" prop pattern.
 
 This LoadableComponent should be wrapped into "make" function if you want to pre-fill parameters.
 
-#### `ReLoadable.WithChildren: Configuration => LoadableComponent`
+**Note :** JSX v2 API
+
+#### `ReLoadable.WithChildren: ReLoadable.Configuration => LoadableComponent`
 
 Take Configuration and create LoadableComponent who use "function as children" pattern.
 
 This LoadableComponent should be wrapped into "make" function if you want to pre-fill parameters.
 
-#### `DynamicImport.import: string => Js.Promise.t(DynamicImport.importable('a))`
+**Note :** JSX v2 API
 
-Import dynamic module ("bs.js" compiled file).
-
-## Options
+#### Options
 
 You have to provide fetch and render/children function, rest are optionnal.
 
-##### `fetch: unit => Js.Promise.t(DynamicImport.importable((module Configuration.t)))`
+**Note :** JSX v2 API
 
-##### `render | children: (module Configuration.t) => ReasonReact.reactElement`
+##### `fetch: unit => Js.Promise.t(DynamicImport.importable((module ReLoadable.Configuration.t)))`
+
+##### `render | children: (module ReLoadable.Configuration.t) => ReasonReact.reactElement`
 
 ##### `onFail: string => ReasonReact.reactElement (optionnal, by default use ReasonReact.nullElement)`
 
