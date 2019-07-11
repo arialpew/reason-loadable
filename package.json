@@ -14,11 +14,11 @@
     "clean": "bsb -clean-world"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.5.4",
     "@glennsl/bs-jest": "^0.4.2",
     "babel-jest": "^24.8.0",
     "babel-preset-react-app": "^9.0.0",
-    "bs-platform": "^5.0.4",
+    "bs-platform": "^5.0.6",
     "bs-react-test-renderer": "^2.0.0",
     "jest": "^24.8.0"
   },
