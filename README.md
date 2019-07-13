@@ -120,7 +120,7 @@ module type T = {
 
 module Lazy: T = {
   include (val component);
-  /* Ypu don't need the "let default = make" statement with non-ReasonReact component (assuming "@my-component-lib/button" have a default export). */
+  /* You don't need the "let default = make" statement with non-ReasonReact component (assuming "@my-component-lib/button" have a default export). */
   /* 100% unsafe due to `import` typedef :) but will be unified by the explicit type annotation above. */
   let make = ReLoadable.lazy_(() => DynamicImport.import("@my-component-lib/button"));
 };
