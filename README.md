@@ -133,7 +133,7 @@ module Lazy: T = {
 [@react.component]
 let make = () => {
   <React.Suspense fallback={<div> (ReasonReact.string("Loading ...")) </div>}>
-    <LazyMaterialButton.Lazy text="Click !" />
+    <LazyButton.Lazy text="Click !" />
   </React.Suspense>;
 };
 ```
