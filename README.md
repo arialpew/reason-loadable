@@ -10,6 +10,7 @@
 * [Support](#support)
 * [JSX v3](#jsx-v2)
   * [Examples](#examples)
+  * [Interop with pure JavaScript components (non-ReasonReact)](#interop-with-pure-javascript-components)
 * [JSX v2](#jsx-v2)
   * [Examples](#examples)
 * [API](#api)
@@ -102,6 +103,40 @@ let make = () => {
 ```
 
 [More example are available in repository.](https://github.com/kMeillet/reason-loadable/tree/master/examples)
+
+## Interop with pure JavaScript components
+
+1) Create type-safe dynamic component, use **"ReLoadable.lazy_"** and **"DynamicImport.import"**.
+
+```reason
+/* LazyButton.re */
+/* You have to type non-ReasonReact component explicitly. */
+module type T = {
+  [@react.component]
+  let make: (~text: string) => React.element;
+};
+
+[@bs.val] external component: (module T) = "undefined";
+
+module Lazy: T = {
+  include (val component);
+  /* Ypu don't need the "let default = make" statement with non-ReasonReact component (assuming "@my-component-lib/button" have a default export). */
+  /* 100% unsafe due to `import` typedef :) but will be unified by the explicit type annotation above. */
+  let make = ReLoadable.lazy_(() => DynamicImport.import("@my-component-lib/button"));
+};
+```
+
+2) Render dynamic component anywhere in your code, use **"React.Suspense"**.
+
+```reason
+/* App.re */
+[@react.component]
+let make = () => {
+  <React.Suspense fallback={<div> (ReasonReact.string("Loading ...")) </div>}>
+    <LazyMaterialButton.Lazy text="Click !" />
+  </React.Suspense>;
+};
+```
 
 # JSX v2
 
