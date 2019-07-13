@@ -7,11 +7,11 @@
     "makew": "cross-env NODE_ENV=development bsb -make-world -w"
   },
   "devDependencies": {
-    "autoprefixer": "^9.6.0",
-    "@babel/core": "^7.4.5",
+    "autoprefixer": "^9.6.1",
+    "@babel/core": "^7.5.4",
     "babel-loader": "^8.0.6",
     "babel-preset-react-app": "^9.0.0",
-    "bs-platform": "^5.0.4",
+    "bs-platform": "^5.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^5.2.0",
     "css-loader": "^3.0.0",
@@ -19,10 +19,10 @@
     "mini-css-extract-plugin": "^0.7.0",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
-    "webpack": "^4.33.0",
+    "webpack": "^4.35.3",
     "webpack-bundle-analyzer": "^3.3.2",
-    "webpack-cli": "^3.3.4",
-    "webpack-dev-server": "^3.7.1",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2",
     "webpack-manifest-plugin": "^2.0.4",
     "webpack-null-plugin": "^0.0.2"
   },
