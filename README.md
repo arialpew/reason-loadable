@@ -8,7 +8,7 @@
 * [Installation](#installation)
 * [Support](#support)
 * [Examples](#examples)
-* [Non-ReasonReact component)](#non-reasonreact-component)
+* [Non-ReasonReact component](#non-reasonreact-component)
 * [API](#api)
 * [Special thanks to](#special-thanks-to)
 
