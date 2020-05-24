@@ -10,7 +10,6 @@
     "test": "jest",
     "testw": "jest --watchAll",
     "format": "./refmt.sh",
-    "interface": "bsc -bs-re-out",
     "clean": "bsb -clean-world"
   },
   "devDependencies": {
