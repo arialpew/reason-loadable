@@ -1,7 +1,7 @@
 {
   "name": "reason-loadable",
   "description": "Suspense/Lazy for ReasonReact",
-  "version": "0.6.2",
+  "version": "1.0.0",
   "author": "Robin Meillet <robin.meillet@epitech.eu>",
   "license": "MIT",
   "scripts": {
