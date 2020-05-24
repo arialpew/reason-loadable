@@ -6,6 +6,7 @@
 
 Please consider migrating to JSX v3 (new ReasonReact hook components).
 
+- Rewrite ReLoadable API to support only JSX v3 (type definition for dynamic import & React.lazy).
 - Update all devDependencies (bs-platform@7.3.2, @glennsl/bs-jest@0.5.1, babel-jest@26.0.1, jest@26.0.1, @babel/core@7.9.6, babel-preset-react-app@9.1.2, react@16.13.1, react-dom@16.13.1, reason-react >= 0.8).
 - Remove "bs-dynamic-import" dependency.
 - Remove "bs-react-test-renderer" devDependency.
