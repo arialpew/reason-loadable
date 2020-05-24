@@ -13,9 +13,20 @@ testPromise("PlainJsExternal", () =>
      )
 );
 
-testPromise("PlainJsInternal", () =>
+testPromise("PlainJsFnInternal", () =>
   <React.Suspense fallback={<div> "Loading..."->React.string </div>}>
-    <PlainJsInternalLazy test="test" />
+    <PlainJsFnInternalLazy test="test" />
+  </React.Suspense>
+  |> render
+  |> findByText(~matcher=`Str("Hello World : test"))
+  |> Js.Promise.then_(result =>
+       result |> expect |> toMatchSnapshot |> Js.Promise.resolve
+     )
+);
+
+testPromise("PlainJsClassInternal", () =>
+  <React.Suspense fallback={<div> "Loading..."->React.string </div>}>
+    <PlainJsFnInternalLazy test="test" />
   </React.Suspense>
   |> render
   |> findByText(~matcher=`Str("Hello World : test"))

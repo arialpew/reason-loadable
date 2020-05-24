@@ -11,5 +11,5 @@ let makeProps = UnsafePlaceholder.makeProps;
 
 let make =
   ReLoadable.lazy_(() =>
-    ReLoadable.import(UnsafePlaceholder.make, "./js-component.js")
+    ReLoadable.import(UnsafePlaceholder.make, "./fn-component.js")
   );

@@ -17,7 +17,7 @@ function makeProps(prim, prim$1, prim$2) {
 
 var make = React.lazy((function (param) {
         unsafePlaceholder.make;
-        return import("./js-component.js");
+        return import("./fn-component.js");
       }));
 
 var UnsafePlaceholder = unsafePlaceholder;
