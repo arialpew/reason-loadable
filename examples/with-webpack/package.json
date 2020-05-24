@@ -30,7 +30,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "reason-react": "^0.8.0",
-    "reason-loadable": "git+https://git@github.com/kMeillet/reason-loadable.git"
+    "reason-loadable": "^1.0.0"
   },
   "browserslist": [
     ">1%",
