@@ -7,8 +7,9 @@
 
 * [Installation](#installation)
 * [Support](#support)
-* [Examples](#examples)
+* [Example](#example)
 * [Non-ReasonReact component](#non-reasonreact-component)
+* [Experimental SuspenseList](#experimental-suspenselist)
 * [API](#api)
 * [Special thanks to](#special-thanks-to)
 
@@ -37,7 +38,7 @@ You can now use **"ReLoadable"** module.
 
 [ReasonReact](https://github.com/reasonml/reason-react) JSX v2 isn't supported : Please consider migrating to JSX v3 (new [ReasonReact](https://github.com/reasonml/reason-react) hook components).
 
-# Examples
+# Example
 
 1) Create a [ReasonReact](https://github.com/reasonml/reason-react) hook component (JSX v3).
 
@@ -121,6 +122,60 @@ let make = () => {
     <LazyButton text="Click !" />
   </React.Suspense>;
 };
+```
+
+# Experimental SuspenseList
+
+[Concurrent mode](https://reactjs.org/docs/concurrent-mode-intro.html) is only available in the experimental builds of React. To install them, run :
+
+```sh
+npm install react@experimental react-dom@experimental
+```
+
+There are no semantic versioning guarantees for the experimental builds. APIs may be added, changed, or removed with any @experimental release.
+
+[Experimental releases will have frequent breaking changes](https://reactjs.org/docs/concurrent-mode-adoption.html).
+
+You can try these builds on personal projects or in a branch, but we don’t recommend running them in production.
+
+Sometime, there's breaking change in experimental builds. For example, "createRoot" function has been changed to "unstable_createRoot" recently. 
+
+Be prepared to do some research into ReasonReact and React source code if something goes wrong, especially when binding between ReasonReact and React doesn't match due to breaking changes.
+
+**Experimental ReasonReact API is available under the "Experimental" module :** https://github.com/reasonml/reason-react/blob/master/src/ReactDOMRe.re#L40
+
+Some React experimental builds can break the SuspenseList API.
+
+Here is one experimental build that seem to work well with SuspenseList API : **0.0.0-experimental-aae83a4b9**.
+
+```sh
+npm install react@0.0.0-experimental-aae83a4b9 react-dom@0.0.0-experimental-aae83a4b9
+```
+
+```reason
+/* App.re */
+/* LazyButton and LazyHelloWorld are lazy components (see previous examples). */
+[@react.component]
+let make = () => {
+  <React.SuspenseList>
+    <React.Suspense fallback={<div> (React.string("Loading ...")) </div>}>
+      <LazyButton text="Click !" />
+    </React.Suspense>
+    <React.Suspense fallback={<div> (React.string("Loading ...")) </div>}>
+      <LazyHelloWorld name="Zeus" />
+    </React.Suspense>
+  </React.SuspenseList>;
+};
+```
+
+```reason
+/* index.re */
+/* You have to use the experimental createRoot API explicitly. */
+let _ =
+  switch (ReactDOMRe.Experimental.createRootWithId("root")) {
+  | Ok(root) => ReactDOMRe.Experimental.render(root, <App />)
+  | Error(err) => Js.log(err)
+  };
 ```
 
 # API
