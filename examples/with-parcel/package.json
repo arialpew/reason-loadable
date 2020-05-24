@@ -1,0 +1,30 @@
+{
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development parcel index.html --no-cache",
+    "build": "cross-env NODE_ENV=production parcel build index.html --public-url /",
+    "clean": "bsb -clean-world",
+    "make": "cross-env NODE_ENV=production bsb -make-world",
+    "makew": "cross-env NODE_ENV=development bsb -make-world -w"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "autoprefixer": "^9.8.0",
+    "babel-preset-react-app": "^9.1.2",
+    "bs-platform": "^7.3.2",
+    "bsb-js": "^1.1.7",
+    "cross-env": "^7.0.2",
+    "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "reason-react": "^0.8.0",
+    "reason-loadable": "git+https://git@github.com/kMeillet/reason-loadable.git"
+  },
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "Firefox ESR",
+    "not ie < 9"
+  ]
+}
