@@ -13,19 +13,20 @@
     "clean": "bsb -clean-world"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.4",
-    "@glennsl/bs-jest": "^0.4.8",
-    "babel-jest": "^24.8.0",
-    "babel-preset-react-app": "^9.0.0",
-    "bs-platform": "^5.0.6",
-    "bs-react-test-renderer": "^2.0.0",
-    "jest": "^24.8.0"
+    "@babel/core": "^7.9.6",
+    "@glennsl/bs-jest": "^0.5.1",
+    "@komponente/react-hello-world": "^0.0.1",
+    "babel-jest": "^26.0.1",
+    "babel-preset-react-app": "^9.1.2",
+    "bs-platform": "^7.3.2",
+    "bs-react-testing-library": "^0.7.2",
+    "jest": "^26.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "reason-react": ">=0.8.0"
   },
-  "dependencies": {
-    "bs-dynamic-import": "^0.4.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "reason-react": "^0.7.0"
+  "peerDependencies": {
+    "reason-react": ">=0.8.0"
   },
   "jest": {
     "transformIgnorePatterns": [],
