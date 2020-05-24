@@ -1,121 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ReLoadable.WithChildren children component should render loaded component 1`] = `
-<p>
-  Hello world : WithChildren
-</p>
+exports[`PlainJsExternal 1`] = `
+<h2>
+  Hello World
+</h2>
 `;
 
-exports[`ReLoadable.WithChildren children component should render loading component 1`] = `
-<p>
-  Loading ...
-</p>
+exports[`PlainJsInternal 1`] = `
+<h2>
+  Hello World : 
+  test
+</h2>
 `;
 
-exports[`ReLoadable.WithChildren props should render loaded component 1`] = `
-<p>
-  Hello world : WithProps
-</p>
-`;
-
-exports[`ReLoadable.WithChildren props should render loading component 1`] = `
-<p>
-  Loading ...
-</p>
-`;
-
-exports[`ReLoadable.WithChildren pure Loading -> Failed state transition should render failed component 1`] = `
-<p>
-  Error: Cannot find module './???.bs.js' from 'Case.bs.js'
-</p>
-`;
-
-exports[`ReLoadable.WithChildren pure Loading -> Failed state transition should render loading component 1`] = `
-<p>
-  Loading ...
-</p>
-`;
-
-exports[`ReLoadable.WithChildren pure Loading -> Loaded state transition should render loaded component 1`] = `
-<p>
-  Hello world
-</p>
-`;
-
-exports[`ReLoadable.WithChildren pure Loading -> Loaded state transition should render loading component 1`] = `
-<p>
-  Loading ...
-</p>
-`;
-
-exports[`ReLoadable.WithRender children component should render loaded component 1`] = `
-<p>
-  Hello world : WithChildren
-</p>
-`;
-
-exports[`ReLoadable.WithRender children component should render loading component 1`] = `
-<p>
-  Loading ...
-</p>
-`;
-
-exports[`ReLoadable.WithRender children function should render loaded component 1`] = `
-<p>
-  Hello world : WithChildrenFunc
-</p>
-`;
-
-exports[`ReLoadable.WithRender children function should render loading component 1`] = `
-<p>
-  Loading ...
-</p>
-`;
-
-exports[`ReLoadable.WithRender props should render loaded component 1`] = `
-<p>
-  Hello world : WithProps
-</p>
-`;
-
-exports[`ReLoadable.WithRender props should render loading component 1`] = `
-<p>
-  Loading ...
-</p>
-`;
-
-exports[`ReLoadable.WithRender pure Loading -> Failed state transition should render failed component 1`] = `
-<p>
-  Error: Cannot find module './???.bs.js' from 'Case.bs.js'
-</p>
-`;
-
-exports[`ReLoadable.WithRender pure Loading -> Failed state transition should render loading component 1`] = `
-<p>
-  Loading ...
-</p>
-`;
-
-exports[`ReLoadable.WithRender pure Loading -> Loaded state transition should render loaded component 1`] = `
-<p>
-  Hello world
-</p>
-`;
-
-exports[`ReLoadable.WithRender pure Loading -> Loaded state transition should render loading component 1`] = `
-<p>
-  Loading ...
-</p>
-`;
-
-exports[`Reloadable.WithChildren children function should render loaded component 1`] = `
-<p>
-  Hello world : WithChildrenFunc
-</p>
-`;
-
-exports[`Reloadable.WithChildren children function should render loading component 1`] = `
-<p>
-  Loading ...
-</p>
+exports[`SimpleReasonReact 1`] = `
+<h1>
+  Hello World : test
+</h1>
 `;
