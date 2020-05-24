@@ -1,6 +1,6 @@
 {
   "name": "reason-loadable",
-  "description": "A higher order module for loading dynamic components with ReasonReact",
+  "description": "Suspense/Lazy for ReasonReact",
   "version": "0.6.2",
   "author": "Robin Meillet <robin.meillet@epitech.eu>",
   "license": "MIT",
