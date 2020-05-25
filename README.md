@@ -190,8 +190,6 @@ Dynamic import React component.
 
 # Special thanks to
 
-- @jchavarri
-
 - @rickyvetter
 
 - @bloodyowl
